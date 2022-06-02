@@ -1,6 +1,6 @@
 ## binarysearch.com easy problems
 
-## Demo
+## ⚠Demo
 
 **Source**:
 
@@ -16,7 +16,7 @@
 
 **Explanations**:
 
-## Compress String
+## ⚠Compress String
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Compress-String)
 
@@ -40,7 +40,7 @@
 return ''.join(str(x) for x, _ in groupby(s))
 ```
 
-## Run-Length Encoding
+## ⚠Run-Length Encoding
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Run-Length-Encoding)
 
@@ -62,7 +62,7 @@ return ''.join(str(x) for x, _ in groupby(s))
 return "".join(f"{sum(1 for _ in y)}{x}" for x, y in groupby(s))
 ```
 
-## Square of a List
+## ⚠Square of a List
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Square-of-a-List)
 
@@ -76,7 +76,7 @@ return "".join(f"{sum(1 for _ in y)}{x}" for x, y in groupby(s))
 return sorted(map(lambda x: x*x, nums))
 ```
 
-## Verify Max Heap
+## ⚠Verify Max Heap
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Verify-Max-Heap)
 
