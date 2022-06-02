@@ -62,7 +62,7 @@ return ''.join(str(x) for x, _ in groupby(s))
 return "".join(f"{sum(1 for _ in y)}{x}" for x, y in groupby(s))
 ```
 
-## ## Square of a List
+## Square of a List
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Square-of-a-List)
 
