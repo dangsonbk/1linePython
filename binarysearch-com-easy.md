@@ -26,13 +26,9 @@
 > 
 > That is, if a list contains repeated characters, they should be replaced with a single copy of the character. The order of the elements should not be changed.
 > 
-> #### Input
+> **Input**: s = "aaaaaabbbccccaaaaddf"
 > 
-> s = "aaaaaabbbccccaaaaddf"
-> 
-> #### Output
-> 
-> "abcadf"
+> **Output**: "abcadf"
 
 **Answer:**
 
@@ -48,19 +44,21 @@ return ''.join(str(x) for x, _ in groupby(s))
 
 > Given a string `s`, return its run-length encoding. You can assume the string to be encoded have no digits and consists solely of alphabetic characters.
 > 
-> #### **Input**
+> **Input**: s = "aaaabbbccdaa"
 > 
-> s = "aaaabbbccdaa"
-> 
-> #### **Output**
-> 
-> "4a3b2c1d2a"
+> **Output**: "4a3b2c1d2a"
 
 **Answer**:
 
 ```python
 return "".join(f"{sum(1 for _ in y)}{x}" for x, y in groupby(s))
 ```
+
+**Explanations**:
+
+`itertools.groupby()` then count the number of times the character appears in each group.
+
+Note that object of type `itertools._grouper_` does not support `len()` method, so we have to use `sum(1 for _ in y)`
 
 ## ⚠Square of a List
 
