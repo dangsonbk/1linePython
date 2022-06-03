@@ -590,3 +590,19 @@ return n*n
 ```python
 return ([1 for i in range(len(s)//2) if s[i] != s[len(s) - 1 - i]].count(1) == 0)
 ```
+
+## ⚠Detect the Only Duplicate in a List
+
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Detect-the-Only-Duplicate-in-a-List)
+
+**Description**:
+
+> You are given a list `nums` of length `n + 1` picked from the range `1, 2, ..., n`. By the [pigeonhole principle](https://en.wikipedia.org/wiki/Pigeonhole_principle), there must be a duplicate. Find and return it. There is guaranteed to be exactly one duplicate.
+> 
+> Bonus: Can you do this in O(n) time and O(1) space?
+
+**Answer**:
+
+```python
+return sum(nums) - sum(set(nums))
+```
