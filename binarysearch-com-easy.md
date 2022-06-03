@@ -49,6 +49,38 @@ Uses Python `reduce()` on string s, whenever it has '()' in the result of `re
 - `c1[:-1] if c2==")" and c1[-1] == "(" else c1 + c2`: if `c1 + c2` ends with `()`, then take `c1[:1]` only, else take `c1 + c2`.
 - Not really 1 line because `reduce()` require `functools` imported.
 
+## ⚠Large to Small Sort
+
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Large-to-Small-Sort)
+
+**Description**:
+
+> Given a list of integers `nums`, sort the list in the following way:
+> 
+> - First number is the maximum
+> - Second number is the minimum
+> - Third number is the 2nd maximum
+> - Fourth number is the 2nd minimum
+> - And so on.
+> 
+> **Input**: nums = [5, 2, 9, 3]
+> 
+> **Output**: [9, 2, 5, 3]
+
+**Answer**:
+
+```python
+return [x for x in chain(*zip_longest(sorted(nums)[len(nums)//2:][::-1], sorted(nums)[:len(nums)//2])) if x is not None]
+```
+
+**Explanations**:
+
+- Slices sorted input into two lists, reverse second list, got `[2, 3]` and `[9, 5]`.
+
+- zip these two lists with second list first: got `(9, 2)`, `(5, 3)`
+
+- chain them
+
 ## ⚠Compress String
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Compress-String)
