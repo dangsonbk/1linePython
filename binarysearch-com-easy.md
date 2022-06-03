@@ -712,3 +712,33 @@ return max([int(str(n)[:i] + "3" + str(n)[i+1:]) for i in range(len(str(n)))])
 ```python
 return ["clap" if not i%3 else "clap" if "3" in str(i) or "6" in str(i) or "9" in str(i) else str(i) for i in range(1, n + 1)]
 ```
+
+## ⚠Even-Frequency
+
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Even-Frequency)
+
+**Description**:
+
+> Given a list of integers nums, return whether all numbers appear an even number of times.
+> 
+
+**Answer**:
+
+```python
+return len(list(filter(bool, [1 - len(list(x)) % 2 == 0 for _,x in groupby(sorted(nums))]))) == 0
+```
+
+## ⚠Minimum Cost Sort
+
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Minimum Cost Sort)
+
+**Description**:
+
+> Given a list of integers nums, return the minimum cost of sorting the list in ascending or descending order. The cost is defined as the sum of absolute differences between any element's old and new value.
+> 
+
+**Answer**:
+
+```python
+return min(sum([abs(i - j) for i, j in zip(nums, sorted(nums))]), sum([abs(i - j) for i, j in zip(nums, sorted(nums)[::-1])]
+```
