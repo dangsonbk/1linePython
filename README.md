@@ -8,4 +8,5 @@ Collection of 1-line Python answers on some online code challenges.
 - Code challenge websites usually imported some default Python libraries, but the list may vary between sites.
 
 ## Contributors:
+- [dangsonbk](https://github.com/dangsonbk)
 - [shinez1997](https://github.com/shinez1997)
