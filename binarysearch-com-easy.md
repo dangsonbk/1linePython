@@ -749,7 +749,7 @@ return not any([i%2 for i in Counter(nums).values()])
 
 ## ⚠Minimum Cost Sort
 
-**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Minimum Cost Sort)
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Minimum-Cost-Sort)
 
 **Description**:
 
@@ -758,10 +758,8 @@ return not any([i%2 for i in Counter(nums).values()])
 **Answer**:
 
 ```python
-return min(sum([abs(i - j) for i, j in zip(nums, sorted(nums))]), sum([abs(i - j) for i, j in zip(nums, sorted(nums)[::-1])]
+return min(sum([abs(i - j) for i, j in zip(nums, sorted(nums))]), sum([abs(i - j) for i, j in zip(nums, sorted(nums)[::-1])]))## ⚠3 and 7
 ```
-
-## ⚠3 and 7
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/3-and-7)
 
