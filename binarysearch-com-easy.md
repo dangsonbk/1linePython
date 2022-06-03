@@ -159,6 +159,20 @@ Note that object of type `itertools._grouper_` does not support `len()` method, 
 return ["FizzBuzz" if not i%3 and not i%5 else "Fizz" if not i%3 else "Buzz" if not i%5 else str(i) for i in range(1, n+1)]
 ```
 
+## ⚠Anagram Checks
+
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Anagram-Checks)
+
+**Description**:
+
+> Given two strings `s0` and `s1`, return whether they are anagrams of each other.
+
+**Answer**:
+
+```python
+return sorted(s0) == sorted(s1)
+```
+
 ## ⚠Square of a List
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Square-of-a-List)
