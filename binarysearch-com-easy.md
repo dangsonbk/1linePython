@@ -173,6 +173,32 @@ return ["FizzBuzz" if not i%3 and not i%5 else "Fizz" if not i%3 else "Buzz" if 
 return sorted(map(lambda x: x*x, nums))
 ```
 
+## ⚠Run-Length Decoding
+
+**Source**:
+
+**Description**:
+
+> Given a string `s`, consisting of digits and lowercase alphabet characters, that's a run-length encoded string, return its decoded version.
+> 
+> Note: The original string is guaranteed not to have numbers in it.
+> 
+> **Input**: s = "4a3b2c1d2a"
+> 
+> **Output**: "aaaabbbccdaa"
+
+**Answer**:
+
+```python
+return reduce(lambda p, c: (p[0] + c*p[1], int(c) if c.isnumeric() else 0), [("", 0)]+["".join(g[1]) for g in groupby(s, lambda n: n.isnumeric())])[0]
+```
+
+**Explanations**:
+
+- `groupby` by `lambda n: n.isnumeric()`and create list of `[num, character, num, character ...]`
+
+- `reduce`start with`("", n)`, where `n` is the number of times the next character appears.
+
 ## ⚠Verify Max Heap
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Verify-Max-Heap)
@@ -188,6 +214,7 @@ return sorted(map(lambda x: x*x, nums))
 
 ```python
 return [1 for i in range(len(nums)) if 2*i + 1 < len(nums) and nums[i] < nums[2*i + 1]].count(1) + [1 for i in range(len(nums)) if 2*i + 2 < len(nums) and nums[i] < nums[2*i + 2]].count(1) == 0
+# Your code took 4 milliseconds — faster than 18.41% in Python
 ```
 
 **Explanation**:
