@@ -1,5 +1,9 @@
 ## binarysearch.com easy problems
 
+---
+
+Please use this template if you want to contribute to this list:
+
 ## ⚠Demo
 
 **Source**:
@@ -15,6 +19,8 @@
 ```
 
 **Explanations**:
+
+---
 
 ## ⚠Compress String
 
@@ -51,6 +57,8 @@ return ''.join(str(x) for x, _ in groupby(s))
 **Answer**:
 
 ```python
+return "".join(str(len(list(y))) + str(x) for x, y in groupby(s))
+# https://stackoverflow.com/a/59183023
 return "".join(f"{sum(1 for _ in y)}{x}" for x, y in groupby(s))
 ```
 
@@ -58,7 +66,7 @@ return "".join(f"{sum(1 for _ in y)}{x}" for x, y in groupby(s))
 
 `itertools.groupby()` then count the number of times the character appears in each group.
 
-Note that object of type `itertools._grouper_` does not support `len()` method, so we have to use `sum(1 for _ in y)`
+Note that object of type `itertools._grouper_` does not support `len()` method, so we have to use `sum(1 for _ in y)`or convert it to list.
 
 ## ⚠Square of a List
 
@@ -95,6 +103,11 @@ return [1 for i in range(len(nums)) if 2*i + 1 < len(nums) and nums[i] < nums[2*
 
 Iterate through the list, `1` if invalid with requirements, then count if any `1` shown up.
 
+**Answer 2**:
+
+```python
+return len(list(dropwhile(lambda x: ((a[2 * x + 1] <= a[x]) if (2 * x + 1) < len(a) else True) and ((a[2 * x  2] <= a[x]) if (2 * x + 2) < len(a) else True) , range(len(a))))) == 0
+```
 
 ## ⚠Just Average
 
@@ -183,23 +196,249 @@ return [1 for i in intervals if point >= i[0] and point <= i[1]].count(1)
 **Answer**:
 
 ```python
-return list("".join(str(x) for x in i) for i in zip(a, b))
+return "".join(i for j in zip(s0[:min([len(s0), len(s1)])], s1[:min([len(s0), len(s1)])]) for i in j) + s0[min([len(s0), len(s1)]):] + s1[min([len(s0), len(s1)]):]
 ```
 
-## ⚠Verify Max Heap
+## ⚠Reverse Sublists to Convert to Target
 
-**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Verify-Max-Heap)
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Reverse-Sublists-to-Convert-to-Target)
 
 **Description**:
 
-> Given a list of integers nums, return whether it represents a max heap. That is, for every i we have that: nums[i] ≥ nums[2*i + 1] if 2*i + 1 is within bounds nums[i] ≥ nums[2*i + 2] if 2*i + 2 is within bounds
+> Given two lists of integers `nums`, and `target`, consider an operation where you take some sublist in `nums` and reverse it. Return whether it's possible to turn `nums` into `target`, given you can make any number of operations.
 > 
-> **Input**: nums = [4, 2, 3, 0, 1]
+> **Input**
+> 
+> nums = [1, 2, 3, 8, 9]
+> 
+> target = [3, 2, 1, 9, 8]
 > 
 > **Output**: True
 
 **Answer**:
 
 ```python
-return len(list(dropwhile(lambda x: ((a[2 * x + 1] <= a[x]) if (2 * x + 1) < len(a) else True) and ((a[2 * x + 2] <= a[x]) if (2 * x + 2) < len(a) else True) , range(len(a))))) == 0
+return Counter(nums) == Counter(target)
+```
+
+## ⚠Greatest Common Divisor
+
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Greatest-Common-Divisor)
+
+**Description**:
+
+> Given a list of positive integers `nums`, return the largest positive integer that divides each of the integers.
+
+**Answer**:
+
+```python
+return reduce(math.gcd, nums)
+```
+
+## ⚠Longest Alliteration
+
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Longest-Alliteration)
+
+**Description**:
+
+> Given a list of lowercase alphabet strings `words`, return the length of the longest contiguous sublist where all words share the same first letter.
+> 
+> **Input**: words = ["she", "sells", "seashells", "he", "sells", "clams"]
+> 
+> **Output**: 3
+
+**Answer**:
+
+```python
+ return max([len(list(g[1])) for g in groupby(words, lambda x: x[0])]) if len(words) else 0
+```
+
+## ⚠Rotate List Left by K
+
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Rotate-List-Left-by-K)
+
+**Description**:
+
+> Write a function that rotates a list of numbers to the left by `k` elements. Numbers should wrap around.
+> 
+> Note: The list is guaranteed to have at least one element, and `k` is guaranteed to be less than or equal to the length of the list.
+> 
+> Bonus: Do this without creating a copy of the list. How many swap or move operations do you need?
+> 
+> **Input**
+> 
+> nums = [1, 2, 3, 4, 5, 6]
+> 
+> k = 2
+> 
+> **Output**: [3, 4, 5, 6, 1, 2]
+
+**Answer**:
+
+```python
+return nums[k:] + nums[:k]
+```
+
+## ⚠Largest Gap
+
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Largest-Gap)
+
+**Description**:
+
+> Given a list of integers `nums`, return the largest difference of two consecutive integers in the sorted version of `nums`.
+
+**Answer**:
+
+```python
+return max([y-x for x,y in zip(sorted(nums)[:-1], sorted(nums)[1:])])
+```
+
+## ⚠Odd Number of Digits
+
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Odd-Number-of-Digits)
+
+**Description**:
+
+> Given a list of positive integers `nums`, return the number of integers that have odd number of digits.
+
+**Answer**:
+
+```python
+return len([c for c in nums if len(str(c))%2])
+```
+
+## ⚠Append List to Sum Target
+
+**Source**:
+
+**Description**:
+
+> You are given a list of integers `nums` and integers `k` and `target`. Consider an operation where we choose an integer `-k ≤ e ≤ k` and append it to `nums`.
+> 
+> Return the minimum number of operations required such that the sum of `nums` equals to `target`.
+
+**Answer**:
+
+```python
+return math.ceil(abs(sum(nums) - target) / k)
+```
+
+## ⚠In-Place Move Zeros to End of List
+
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/In-Place-Move-Zeros-to-End-of-List)
+
+**Description**:
+
+> Given a list of integers `nums`, put all the zeros to the back of the list by modifying the list in-place. The relative ordering of other elements should stay the same.
+> 
+> Can you do it in O(1) additional space?
+
+**Answer**:
+
+```python
+return list([n for n in nums if n != 0]) + [0]*nums.count(0)
+```
+
+## ⚠Add One to List
+
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Add-One-to-List)
+
+**Description**:
+
+> You are given a list of integers `nums`, representing a decimal number and `nums[i]` is between `[0, 9]`.
+> 
+> For example, `[1, 3, 9]` represents the number `139`.
+> 
+> Return the same list in the same representation except modified so that `1` is added to the number.
+> 
+> **Input**: nums = [1, 9, 1]
+> 
+> **Output**: [1, 9, 2]
+
+**Answer**:
+
+```python
+return list([int(c) for c in str(int(''.join([str(n) for n in nums])) + 1)])
+```
+
+## ⚠Roomba
+
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Roomba)
+
+**Description**:
+
+> A Roomba robot is currently sitting in a Cartesian plane at `(0, 0)`. You are given a list of its `moves` that it will make, containing `NORTH`, `SOUTH`, `WEST`, and `EAST`.
+> 
+> Return whether after its moves it will end up in the coordinate `(x, y)`.
+> 
+> **Input**
+> 
+> moves = ["NORTH", "EAST"]
+> 
+> x = 1
+> 
+> y = 1
+> 
+> **Output**: True
+
+**Answer**:
+
+```python
+return ((x, y) == tuple([sum(p) for p in zip(*[{"NORTH":(0, 1),"EAST":(1, 0),"SOUTH":(0, -1),"WEST":(-1, 0)}[m] for m in moves])])) if len(moves) else (x, y) == (0, 0)
+```
+
+## ⚠Reverse Words
+
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Reverse-Words)
+
+**Description**:
+
+> Given a string `s` of words delimited by spaces, reverse the order of words.
+
+**Answer**:
+
+```python
+return " ".join(sentence.split()[::-1])
+```
+
+## ⚠Merging Two Sorted Lists
+
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Merging-Two-Sorted-Lists)
+
+**Description**:
+
+> Given two lists of integers `a` and `b` sorted in ascending order, merge them into one large sorted list.
+
+**Answer**:
+
+```python
+return sorted(a + b)
+```
+
+## ⚠Sum of First N Odd Integers
+
+**Source**:
+
+**Description**:
+
+> Given an integer `n`, return the sum of the first `n` positive odd integers.
+
+**Answer**:
+
+```python
+return n*n
+```
+
+## ⚠Check Palindrome
+
+**Source**:
+
+**Description**:
+
+> Given a string `s`, return whether it is a palindrome.
+
+**Answer**:
+
+```python
+return ([1 for i in range(len(s)//2) if s[i] != s[len(s) - 1 - i]].count(1) == 0)
 ```
