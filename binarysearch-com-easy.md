@@ -22,6 +22,33 @@ Please use this template if you want to contribute to this list:
 
 ---
 
+## ⚠Minimum Bracket Addition
+
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Minimum-Bracket-Addition)
+
+**Description**:
+
+> Given a string `s` containing brackets `(` and `)`, return the minimum number of brackets that can be inserted so that the brackets are balanced.
+> 
+> **Input**: s = ")))(("
+> 
+> **Output**: 5
+
+**Answer**:
+
+```python
+return len(functools.reduce(lambda c1, c2: c2 if not c1 else c1[:-1] if c2==")" and c1[-1] == "(" else c1 + c2, s)) if s else 0
+```
+
+**Explanations**:
+
+Uses Python `reduce()` on string s, whenever it has '()' in the result of `reduce()` step then remove this from string.
+
+- Can use `''.join((c1, c2)).replace("()", "")` but the performance is pretty bad.
+- `c2 if not c1 else ...`: prevent Exception on `c1[:-1]` when c1 is empty.
+- `c1[:-1] if c2==")" and c1[-1] == "(" else c1 + c2`: if `c1 + c2` ends with `()`, then take `c1[:1]` only, else take `c1 + c2`.
+- Not really 1 line because `reduce()` require `functools` imported.
+
 ## ⚠Compress String
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Compress-String)
