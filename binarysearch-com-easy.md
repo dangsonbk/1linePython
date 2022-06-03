@@ -661,7 +661,7 @@ return abs(sum([1 if i > j else -1 if i < j else 0 for i, j in zip(nums, nums[1:
 
 - shift input by one and zip with original input.
 
-- compare item in each zip, reproduce 1, -1, 0 corresponding to larger, smaller, equal
+- compare items in each zip, reproduce 1, -1, 0 corresponding to larger, smaller, equal
 
 - if list is strictly increasing or strictly decreasing, then number of 1s or -1s must equal `len(input)-1`
 
@@ -677,4 +677,38 @@ return abs(sum([1 if i > j else -1 if i < j else 0 for i, j in zip(nums, nums[1:
 
 ```python
 return len(reduce(lambda a, b: a + b if not a or a[-1] == b else a[:-1], s)) if s else 0
+```
+
+## ⚠123 Number Flip
+
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/123-Number-Flip)
+
+**Description**:
+
+> You are given an integer `n` consisting of digits `1`, `2`, and `3` and you can flip one digit to a `3`. Return the maximum number you can make.
+
+**Answer**:
+
+```python
+return max([int(str(n)[:i] + "3" + str(n)[i+1:]) for i in range(len(str(n)))])
+```
+
+**Explanations**:
+
+- Convert input list to string, generate list of all possible replacements, return max.
+
+## ⚠3-6-9
+
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/3-6-9)
+
+**Description**:
+
+> Given an integer `n`, return a list with each number from 1 to `n`, except if it's a multiple of 3 or has a 3, 6, or 9 in the number, it should be the string `"clap"`.
+> 
+> Note: return the number as a string.
+
+**Answer**:
+
+```python
+return ["clap" if not i%3 else "clap" if "3" in str(i) or "6" in str(i) or "9" in str(i) else str(i) for i in range(1, n + 1)]
 ```
