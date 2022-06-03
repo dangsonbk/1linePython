@@ -280,6 +280,10 @@ return reduce(math.gcd, nums)
  return max([len(list(g[1])) for g in groupby(words, lambda x: x[0])]) if len(words) else 0
 ```
 
+**Explanation:**
+
+groupby() by first later of words then find longest group.
+
 ## ⚠Rotate List Left by K
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Rotate-List-Left-by-K)
@@ -413,6 +417,14 @@ return list([int(c) for c in str(int(''.join([str(n) for n in nums])) + 1)])
 ```python
 return ((x, y) == tuple([sum(p) for p in zip(*[{"NORTH":(0, 1),"EAST":(1, 0),"SOUTH":(0, -1),"WEST":(-1, 0)}[m] for m in moves])])) if len(moves) else (x, y) == (0, 0)
 ```
+
+**Explanation:**
+
+- Convert moves to direction map: `{"NORTH":(0, 1),"EAST":(1, 0),"SOUTH":(0, -1),"WEST":(-1, 0)`
+
+- zip the move then we have two list of moves by x and moves by y.
+
+- sum the moves to get final position, returns [POS_X, POS_Y], compare to provided x, y values.
 
 ## ⚠Reverse Words
 
