@@ -614,7 +614,6 @@ return sum(nums) - sum(set(nums))
 **Description**:
 
 > You are given a list of integers nums. Return the minimum positive value we can append to the beginning of nums such that prefix sums of the resulting list contains numbers that are all greater than 0.
-> 
 
 **Answer**:
 
@@ -629,7 +628,6 @@ return 1 if not nums or min(accumulate(nums)) > 0  else (abs(min(accumulate(nums
 **Description**:
 
 > Given a string s, consisting of "X" and "Y"s, delete the minimum number of characters such that there's no consecutive "X" and no consecutive "Y".
-> 
 
 **Answer**:
 
@@ -644,13 +642,28 @@ return "".join(x for x,_ in groupby(s))
 **Description**:
 
 > Given a list of integers nums, return whether the list is strictly increasing or strictly decreasing.
-> 
 
 **Answer**:
 
 ```python
 return len(list(dropwhile(lambda x: nums[x+1] > nums[x], range(len(nums) - 1)))) == 0 or len(list(dropwhile(lambda x: nums[x+1] < nums[x], range(len(nums) - 1)))) == 0
+# Your code took 34 milliseconds — faster than 18.81% in Python
 ```
+
+**Answer 2:**
+
+```python
+return abs(sum([1 if i > j else -1 if i < j else 0 for i, j in zip(nums, nums[1:])])) == len(nums) - 1 if len(nums) > 1 else True
+# Your code took 26 milliseconds — faster than 32.82% in Python
+```
+
+**Explanation:**
+
+- shift input by one and zip with original input.
+
+- compare item in each zip, reproduce 1, -1, 0 corresponding to larger, smaller, equal
+
+- if list is strictly increasing or strictly decreasing, then number of 1s or -1s must equal `len(input)-1`
 
 ## ⚠Shortest String
 
@@ -659,7 +672,6 @@ return len(list(dropwhile(lambda x: nums[x+1] > nums[x], range(len(nums) - 1))))
 **Description**:
 
 > Given a string s consisting only of "1"s and "0"s, you can delete any two adjacent letters if they are different. Return the length of the smallest string that you can make if you're able to perform this operation as many times as you want.
-> 
 
 **Answer**:
 
