@@ -101,6 +101,24 @@ return [x for x in chain(*zip_longest(sorted(nums)[len(nums)//2:][::-1], sorted(
 return ''.join(str(x) for x, _ in groupby(s))
 ```
 
+## ⚠First Fit Room
+
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/First-Fit-Room)
+
+**Description**:
+
+> You are given a list of integers `rooms` and an integer `target`. Return the first integer in `rooms` that's `target` or larger. If there is no solution, return `-1`.
+
+**Answer**:
+
+```python
+return next((r for r in rooms if r >= target), -1)
+```
+
+**Explanations**:
+
+[python - Get the first item from an iterable that matches a condition - Stack Overflow](https://stackoverflow.com/a/2364277)
+
 ## ⚠Run-Length Encoding
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Run-Length-Encoding)
@@ -126,6 +144,20 @@ return "".join(f"{sum(1 for _ in y)}{x}" for x, y in groupby(s))
 `itertools.groupby()` then count the number of times the character appears in each group.
 
 Note that object of type `itertools._grouper_` does not support `len()` method, so we have to use `sum(1 for _ in y)`or convert it to list.
+
+## ⚠FizzBuzz
+
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/FizzBuzz)
+
+**Description**:
+
+> Given an integer `n`, return a list of integers from `1` to `n` as strings except for multiples of `3` use `“Fizz”` instead of the integer and for the multiples of `5` use `“Buzz”`. For integers which are multiples of both `3` and `5` use `“FizzBuzz”`.
+
+**Answer**:
+
+```python
+return ["FizzBuzz" if not i%3 and not i%5 else "Fizz" if not i%3 else "Buzz" if not i%5 else str(i) for i in range(1, n+1)]
+```
 
 ## ⚠Square of a List
 
