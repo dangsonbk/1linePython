@@ -520,7 +520,7 @@ return n*n
 
 ## ⚠Check Palindrome
 
-**Source**:
+**Source**: 
 
 **Description**:
 
@@ -530,4 +530,60 @@ return n*n
 
 ```python
 return ([1 for i in range(len(s)//2) if s[i] != s[len(s) - 1 - i]].count(1) == 0)
+```
+
+## ⚠Consecutive Duplicates [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Consecutive-Duplicates)
+
+**Source**:
+
+**Description**:
+
+> Given a string s, consisting of "X" and "Y"s, delete the minimum number of characters such that there's no consecutive "X" and no consecutive "Y".
+
+**Answer**:
+
+```python
+return "".join(x for x,_ in groupby(s))
+```
+
+## ⚠Strictly Increasing or Strictly Decreasing [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Strictly-Increasing-or-Strictly-Decreasing)
+
+**Source**:
+
+**Description**:
+
+> Given a list of integers nums, return whether the list is strictly increasing or strictly decreasing.
+
+**Answer**:
+
+```python
+return len(list(dropwhile(lambda x: nums[x+1] > nums[x], range(len(nums) - 1)))) == 0 or len(list(dropwhile(lambda x: nums[x+1] < nums[x], range(len(nums) - 1)))) == 0
+```
+
+## ⚠Shortest String [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Shortest-String)
+
+**Source**:
+
+**Description**:
+
+> Given a string s consisting only of "1"s and "0"s, you can delete any two adjacent letters if they are different. Return the length of the smallest string that you can make if you're able to perform this operation as many times as you want.
+
+**Answer**:
+
+```python
+return len(reduce(lambda a, b: a + b if not a or a[-1] == b else a[:-1], s)) if s else 0
+```
+
+## ⚠Minimum Initial Value for Positive Prefix Sums [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Minimum-Initial-Value-for-Positive-Prefix-Sums)
+
+**Source**:
+
+**Description**:
+
+> You are given a list of integers nums. Return the minimum positive value we can append to the beginning of nums such that prefix sums of the resulting list contains numbers that are all greater than 0.
+
+**Answer**:
+
+```python
+return 1 if not nums or min(accumulate(nums)) > 0  else (abs(min(accumulate(nums))) + 1)
 ```
