@@ -579,7 +579,7 @@ return sorted(a + b)
 
 ## ⚠Sum of First N Odd Integers
 
-**Source**:
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Sum-of-First-N-Odd-Integers)
 
 **Description**:
 
@@ -593,7 +593,7 @@ return n*n
 
 ## ⚠Check Palindrome
 
-**Source**:
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Check-Palindrome)
 
 **Description**:
 
