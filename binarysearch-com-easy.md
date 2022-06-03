@@ -226,6 +226,24 @@ return [1 for i in intervals if point >= i[0] and point <= i[1]].count(1)
 return "".join(i for j in zip(s0[:min([len(s0), len(s1)])], s1[:min([len(s0), len(s1)])]) for i in j) + s0[min([len(s0), len(s1)]):] + s1[min([len(s0), len(s1)]):]
 ```
 
+**Explanation**:
+
+- Slice the longer string to the length equal shorter string, zip 2 strings.
+
+- Add the rest of longer string.
+
+- It's fun but the answer 2 is better.
+
+**Answer 2**:
+
+```python
+return "".join("".join(x) for x in zip_longest(s0, s1, fillvalue=''))
+```
+
+**Explanation**:
+
+- Check this: [itertools zip_longest](https://docs.python.org/3/library/itertools.html#itertools.zip_longest)
+
 ## ⚠Reverse Sublists to Convert to Target
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Reverse-Sublists-to-Convert-to-Target)
