@@ -734,12 +734,17 @@ return ["clap" if not i%3 else "clap" if "3" in str(i) or "6" in str(i) or "9" i
 **Description**:
 
 > Given a list of integers nums, return whether all numbers appear an even number of times.
-> 
 
 **Answer**:
 
 ```python
 return len(list(filter(bool, [1 - len(list(x)) % 2 == 0 for _,x in groupby(sorted(nums))]))) == 0
+```
+
+**Answer 2:**
+
+```python
+return not any([i%2 for i in Counter(nums).values()])
 ```
 
 ## ⚠Minimum Cost Sort
@@ -749,10 +754,29 @@ return len(list(filter(bool, [1 - len(list(x)) % 2 == 0 for _,x in groupby(sorte
 **Description**:
 
 > Given a list of integers nums, return the minimum cost of sorting the list in ascending or descending order. The cost is defined as the sum of absolute differences between any element's old and new value.
-> 
 
 **Answer**:
 
 ```python
 return min(sum([abs(i - j) for i, j in zip(nums, sorted(nums))]), sum([abs(i - j) for i, j in zip(nums, sorted(nums)[::-1])]
 ```
+
+## ⚠3 and 7
+
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/3-and-7)
+
+**Description**:
+
+> Given a positive integer `n`, determine whether you can make `n` by summing up some non-negative multiple of 3 and some non-negative multiple of 7.
+
+**Answer**:
+
+```python
+return n > 11 or n in {3, 6, 7, 9, 10}
+```
+
+**Explanations**:
+
+Chicken McNugget Theorem aka Postage Stamp Problem. Given any two relatively prime number a, b the greatest N that cannot be represented as ax + by = N is (a*b)–a–b where x, y both > 0.
+
+For a = 3 and b = 7 if n > (3×7-3-7) the answer is true.
