@@ -139,3 +139,39 @@ class Solution:
             return x
         print(__a, __b)
 ```
+
+## ⚠Smallest Intersecting Element
+
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Smallest-Intersecting-Element)
+
+**Description**:
+
+> You are given a two-dimensional list of integers `matrix` where each row is sorted in ascending order. Return the smallest number that exists in every row. If there's no solution, return `-1`.
+
+**Answer**:
+
+```python
+return -1 if not matrix else min(set.intersection(*[set(n) for n in matrix])) if set.intersection(*[set(n) for n in matrix]) else -1
+```
+
+**Explanations**:
+
+Just find the intersection of rows.
+
+## ⚠Longest Consecutive Run of 1s in Binary
+
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Longest-Consecutive-Run-of-1s-in-Binary)
+
+**Description**:
+
+> Given a non-negative integer `n`, return the length of the longest consecutive run of `1`s in its binary representation.
+
+**Answer**:
+
+```python
+return max([len(list(g)) for c, g in groupby(str(bin(n))) if c == '1']) if n else 0
+```
+
+**Explanations**:
+
+Convert binary of n to string, groupby and find the max length of groupby object of '1'.
