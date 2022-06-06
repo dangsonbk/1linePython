@@ -778,3 +778,33 @@ return n > 11 or n in {3, 6, 7, 9, 10}
 Chicken McNugget Theorem aka Postage Stamp Problem. Given any two relatively prime number a, b the greatest N that cannot be represented as ax + by = N is (a*b)–a–b where x, y both > 0.
 
 For a = 3 and b = 7 if n > (3×7-3-7) the answer is true.
+
+## ⚠Max-Product-of-Two-Numbers
+
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Max-Product-of-Two-Numbers)
+
+**Description**:
+
+> Given a list of integers nums, find the largest product of two distinct elements.
+> 
+
+**Answer**:
+
+```python
+return max(reduce(lambda x, y: x * y, sorted(nums)[-2:]), reduce(lambda x, y: x * y, sorted(nums)[:2]))
+```
+## ⚠Equivalent Value and Frequency
+
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Equivalent-Value-and-Frequency)
+
+**Description**:
+
+> Given a list of integers nums, return whether there's an integer whose frequency in the list is same as its value.
+
+> 
+
+**Answer**:
+
+```python
+return len(list(filter(bool, (x == len(list(y)) for x, y in groupby(sorted(nums)))))) != 0
+```
