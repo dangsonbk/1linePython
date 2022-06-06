@@ -2,8 +2,6 @@
 
 Collection of 1-line Python answers on some online code challenges.
 
-
-
 ## Contribution
 
 Please use this template if you want to contribute to this list:
