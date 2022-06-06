@@ -779,7 +779,7 @@ Chicken McNugget Theorem aka Postage Stamp Problem. Given any two relatively pr
 
 For a = 3 and b = 7 if n > (3×7-3-7) the answer is true.
 
-## ⚠Max-Product-of-Two-Numbers
+## ⚠Max Product of Two Numbers
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Max-Product-of-Two-Numbers)
 
