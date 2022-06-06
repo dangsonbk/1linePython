@@ -2,26 +2,6 @@
 
 ---
 
-Please use this template if you want to contribute to this list:
-
-## ⚠Demo
-
-**Source**:
-
-**Description**:
-
-> Description and example
-
-**Answer**:
-
-```python
-#
-```
-
-**Explanations**:
-
----
-
 ## ⚠Minimum Bracket Addition
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Minimum-Bracket-Addition)
@@ -786,13 +766,13 @@ For a = 3 and b = 7 if n > (3×7-3-7) the answer is true.
 **Description**:
 
 > Given a list of integers nums, find the largest product of two distinct elements.
-> 
 
 **Answer**:
 
 ```python
 return max(reduce(lambda x, y: x * y, sorted(nums)[-2:]), reduce(lambda x, y: x * y, sorted(nums)[:2]))
 ```
+
 ## ⚠Equivalent Value and Frequency
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Equivalent-Value-and-Frequency)
