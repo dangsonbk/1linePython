@@ -97,7 +97,7 @@ This is just a tricky question.
 
 Collection of 1-line Python answers on some online code challenges.
 
-## ⚠Demo
+## ⚠Dropped Sensor Metric
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Dropped-Sensor-Metric)
 
