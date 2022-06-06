@@ -788,3 +788,39 @@ return max(reduce(lambda x, y: x * y, sorted(nums)[-2:]), reduce(lambda x, y: x 
 ```python
 return len(list(filter(bool, (x == len(list(y)) for x, y in groupby(sorted(nums)))))) != 0
 ```
+
+## ⚠Smallest Intersecting Element
+
+**Source**:
+
+**Description**:
+
+> Description and example
+
+**Answer**:
+
+```python
+return -1 if not matrix else min(set.intersection(*[set(n) for n in matrix])) if set.intersection(*[set(n) for n in matrix]) else -1
+```
+
+**Explanations**:
+
+Just find the intersection of rows.
+
+## ⚠Longest Consecutive Run of 1s in Binary
+
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Longest-Consecutive-Run-of-1s-in-Binary)
+
+**Description**:
+
+> Given a non-negative integer `n`, return the length of the longest consecutive run of `1`s in its binary representation.
+
+**Answer**:
+
+```python
+return max([len(list(g)) for c, g in groupby(str(bin(n))) if c == '1']) if n else 0
+```
+
+**Explanations**:
+
+Convert binary of n to string, groupby and find the max length of groupby object of '1'.
