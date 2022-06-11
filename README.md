@@ -36,3 +36,4 @@ Please use this template if you want to contribute to this list:
 
 - [dangsonbk](https://github.com/dangsonbk)
 - [shinez1997](https://github.com/shinez1997)
+- [RohitSgh](https://github.com/RohitSgh)
