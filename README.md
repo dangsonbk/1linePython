@@ -8,8 +8,6 @@ Please use this template if you want to contribute to this list:
 
 ---
 
-
-
 ## 🧩 Problem Title
 
 **Source**: [Link](#)
