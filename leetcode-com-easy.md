@@ -1,4 +1,4 @@
-## ⚠Binary Prefix Divisible By 5
+## 🧩 Binary Prefix Divisible By 5
 
 **Source**: [Binary Prefix Divisible By 5](https://leetcode.com/problems/binary-prefix-divisible-by-5/submissions/)
 
@@ -18,7 +18,7 @@
 return reduce(lambda p, n: [p[0] + str(n), p[1] + [int(p[0] + str(n), 2)%5 == 0]], [["", []]] + nums)[1]
 ```
 
-## ⚠Minimum Add to Make Parentheses Valid
+## 🧩 Minimum Add to Make Parentheses Valid
 
 **Source**: [Minimum Add to Make Parentheses Valid](https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/)
 
@@ -51,7 +51,7 @@ Uses Python `reduce()` on string s, whenever it has '()' in the result of `re
 - `c1[:-1] if c2==")" and c1[-1] == "(" else c1 + c2`: if `c1 + c2` ends with `()`, then take `c1[:1]` only, else take `c1 + c2`.
 
 
-## ⚠Remove Palindromic Subsequences
+## 🧩 Remove Palindromic Subsequences
 
 **Source**: [Remove Palindromic Subsequences](https://leetcode.com/problems/remove-palindromic-subsequences/)
 
