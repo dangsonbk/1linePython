@@ -2,7 +2,7 @@
 
 ---
 
-## ⚠Arithmetic Sequences
+## 🧩 Arithmetic Sequences
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/room/Is-Is-3QBtdAZ3vF)
 
@@ -28,7 +28,7 @@ return sum(map( lambda n: n*(n-1)//2, [len(list(g)) for _, g in groupby(zip(nums
 
 - As given *return the number of contiguous arithmetic sequences of length `≥ 3`.* means count the number of sub-group of group with length >= 2. Calculate by `n*(n-1)//2`with n = length of group.
 
-## ⚠Binary Matrix Leftmost One
+## 🧩 Binary Matrix Leftmost One
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Binary-Matrix-Leftmost-One)
 
@@ -55,7 +55,7 @@ return -1 if not len(left_most) else min(left_most)
 
 But the answer still fits under time limitation.
 
-## ⚠Submajority Vote
+## 🧩 Submajority Vote
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Submajority-Vote)
 
@@ -73,7 +73,7 @@ But the answer still fits under time limitation.
 return sorted(list(c for c in Counter(nums) if Counter(nums)[c] > len(nums)/3))
 ```
 
-## ⚠Airplane Seat Shuffling
+## 🧩 Airplane Seat Shuffling
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Airplane-Seat-Shuffling)
 
@@ -97,7 +97,7 @@ This is just a tricky question.
 
 Collection of 1-line Python answers on some online code challenges.
 
-## ⚠Dropped Sensor Metric
+## 🧩 Dropped Sensor Metric
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Dropped-Sensor-Metric)
 
@@ -140,7 +140,7 @@ class Solution:
         print(__a, __b)
 ```
 
-## ⚠Smallest Intersecting Element
+## 🧩 Smallest Intersecting Element
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Smallest-Intersecting-Element)
 
@@ -158,7 +158,7 @@ return -1 if not matrix else min(set.intersection(*[set(n) for n in matrix])) if
 
 Just find the intersection of rows.
 
-## ⚠Longest Consecutive Run of 1s in Binary
+## 🧩 Longest Consecutive Run of 1s in Binary
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Longest-Consecutive-Run-of-1s-in-Binary)
 

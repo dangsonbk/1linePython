@@ -2,7 +2,7 @@
 
 ---
 
-## ⚠Minimum Bracket Addition
+## 🧩 Minimum Bracket Addition
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Minimum-Bracket-Addition)
 
@@ -29,7 +29,7 @@ Uses Python `reduce()` on string s, whenever it has '()' in the result of `re
 - `c1[:-1] if c2==")" and c1[-1] == "(" else c1 + c2`: if `c1 + c2` ends with `()`, then take `c1[:1]` only, else take `c1 + c2`.
 - Not really 1 line because `reduce()` require `functools` imported.
 
-## ⚠Large to Small Sort
+## 🧩 Large to Small Sort
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Large-to-Small-Sort)
 
@@ -57,11 +57,11 @@ return [x for x in chain(*zip_longest(sorted(nums)[len(nums)//2:][::-1], sorted(
 
 - Slices sorted input into two lists, reverse second list, got `[2, 3]` and `[9, 5]`.
 
-- zip these two lists with second list first: got `(9, 2)`, `(5, 3)`
+- zip() these two lists with second list first: got `(9, 2)`, `(5, 3)`
 
-- chain them
+- chain() them
 
-## ⚠Compress String
+## 🧩 Compress String
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Compress-String)
 
@@ -81,7 +81,7 @@ return [x for x in chain(*zip_longest(sorted(nums)[len(nums)//2:][::-1], sorted(
 return ''.join(str(x) for x, _ in groupby(s))
 ```
 
-## ⚠First Fit Room
+## 🧩 First Fit Room
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/First-Fit-Room)
 
@@ -99,7 +99,7 @@ return next((r for r in rooms if r >= target), -1)
 
 [python - Get the first item from an iterable that matches a condition - Stack Overflow](https://stackoverflow.com/a/2364277)
 
-## ⚠Run-Length Encoding
+## 🧩 Run-Length Encoding
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Run-Length-Encoding)
 
@@ -125,7 +125,7 @@ return "".join(f"{sum(1 for _ in y)}{x}" for x, y in groupby(s))
 
 Note that object of type `itertools._grouper_` does not support `len()` method, so we have to use `sum(1 for _ in y)`or convert it to list.
 
-## ⚠FizzBuzz
+## 🧩 FizzBuzz
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/FizzBuzz)
 
@@ -139,7 +139,7 @@ Note that object of type `itertools._grouper_` does not support `len()` method, 
 return ["FizzBuzz" if not i%3 and not i%5 else "Fizz" if not i%3 else "Buzz" if not i%5 else str(i) for i in range(1, n+1)]
 ```
 
-## ⚠Anagram Checks
+## 🧩 Anagram Checks
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Anagram-Checks)
 
@@ -153,7 +153,7 @@ return ["FizzBuzz" if not i%3 and not i%5 else "Fizz" if not i%3 else "Buzz" if 
 return sorted(s0) == sorted(s1)
 ```
 
-## ⚠Square of a List
+## 🧩 Square of a List
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Square-of-a-List)
 
@@ -167,7 +167,7 @@ return sorted(s0) == sorted(s1)
 return sorted(map(lambda x: x*x, nums))
 ```
 
-## ⚠Run-Length Decoding
+## 🧩 Run-Length Decoding
 
 **Source**:
 
@@ -193,7 +193,7 @@ return reduce(lambda p, c: (p[0] + c*p[1], int(c) if c.isnumeric() else 0), [(""
 
 - `reduce`start with`("", n)`, where `n` is the number of times the next character appears.
 
-## ⚠Verify Max Heap
+## 🧩 Verify Max Heap
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Verify-Max-Heap)
 
@@ -221,7 +221,7 @@ Iterate through the list, `1` if invalid with requirements, then count if any `1
 return len(list(dropwhile(lambda x: ((a[2 * x + 1] <= a[x]) if (2 * x + 1) < len(a) else True) and ((a[2 * x  2] <= a[x]) if (2 * x + 2) < len(a) else True) , range(len(a))))) == 0
 ```
 
-## ⚠Just Average
+## 🧩 Just Average
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Just-Average)
 
@@ -239,7 +239,7 @@ return len(list(dropwhile(lambda x: ((a[2 * x + 1] <= a[x]) if (2 * x + 1) < len
 return (sum(nums) - k * (len(nums) - 1)) in nums
 ```
 
-## ⚠Narcissistic Number
+## 🧩 Narcissistic Number
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Narcissistic-Number)
 
@@ -257,7 +257,7 @@ return (sum(nums) - k * (len(nums) - 1)) in nums
 return sum(map(lambda i: i**len(str(n)), [int(d) for d in str(n)])) == n
 ```
 
-## ⚠A Unique String
+## 🧩 A Unique String
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/A-Unique-String)
 
@@ -275,7 +275,7 @@ return sum(map(lambda i: i**len(str(n)), [int(d) for d in str(n)])) == n
 return len(set(s)) == len(s)
 ```
 
-## ⚠Intervals Intersecting at Point
+## 🧩 Intervals Intersecting at Point
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Intervals-Intersecting-at-Point)
 
@@ -293,7 +293,7 @@ return len(set(s)) == len(s)
 return [1 for i in intervals if point >= i[0] and point <= i[1]].count(1)
 ```
 
-## ⚠Interleaved String
+## 🧩 Interleaved String
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Interleaved-String)
 
@@ -329,7 +329,7 @@ return "".join("".join(x) for x in zip_longest(s0, s1, fillvalue=''))
 
 - Check this: [itertools zip_longest](https://docs.python.org/3/library/itertools.html#itertools.zip_longest)
 
-## ⚠Reverse Sublists to Convert to Target
+## 🧩 Reverse Sublists to Convert to Target
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Reverse-Sublists-to-Convert-to-Target)
 
@@ -351,7 +351,7 @@ return "".join("".join(x) for x in zip_longest(s0, s1, fillvalue=''))
 return Counter(nums) == Counter(target)
 ```
 
-## ⚠Greatest Common Divisor
+## 🧩 Greatest Common Divisor
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Greatest-Common-Divisor)
 
@@ -365,7 +365,7 @@ return Counter(nums) == Counter(target)
 return reduce(math.gcd, nums)
 ```
 
-## ⚠Longest Alliteration
+## 🧩 Longest Alliteration
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Longest-Alliteration)
 
@@ -387,7 +387,7 @@ return reduce(math.gcd, nums)
 
 groupby() by first later of words then find longest group.
 
-## ⚠Rotate List Left by K
+## 🧩 Rotate List Left by K
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Rotate-List-Left-by-K)
 
@@ -413,7 +413,7 @@ groupby() by first later of words then find longest group.
 return nums[k:] + nums[:k]
 ```
 
-## ⚠Largest Gap
+## 🧩 Largest Gap
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Largest-Gap)
 
@@ -427,7 +427,7 @@ return nums[k:] + nums[:k]
 return max([y-x for x,y in zip(sorted(nums)[:-1], sorted(nums)[1:])])
 ```
 
-## ⚠Odd Number of Digits
+## 🧩 Odd Number of Digits
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Odd-Number-of-Digits)
 
@@ -441,7 +441,7 @@ return max([y-x for x,y in zip(sorted(nums)[:-1], sorted(nums)[1:])])
 return len([c for c in nums if len(str(c))%2])
 ```
 
-## ⚠Append List to Sum Target
+## 🧩 Append List to Sum Target
 
 **Source**:
 
@@ -457,7 +457,7 @@ return len([c for c in nums if len(str(c))%2])
 return math.ceil(abs(sum(nums) - target) / k)
 ```
 
-## ⚠In-Place Move Zeros to End of List
+## 🧩 In-Place Move Zeros to End of List
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/In-Place-Move-Zeros-to-End-of-List)
 
@@ -473,7 +473,7 @@ return math.ceil(abs(sum(nums) - target) / k)
 return list([n for n in nums if n != 0]) + [0]*nums.count(0)
 ```
 
-## ⚠Add One to List
+## 🧩 Add One to List
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Add-One-to-List)
 
@@ -495,7 +495,7 @@ return list([n for n in nums if n != 0]) + [0]*nums.count(0)
 return list([int(c) for c in str(int(''.join([str(n) for n in nums])) + 1)])
 ```
 
-## ⚠Roomba
+## 🧩 Roomba
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Roomba)
 
@@ -529,7 +529,7 @@ return ((x, y) == tuple([sum(p) for p in zip(*[{"NORTH":(0, 1),"EAST":(1, 0),"SO
 
 - sum the moves to get final position, returns [POS_X, POS_Y], compare to provided x, y values.
 
-## ⚠Reverse Words
+## 🧩 Reverse Words
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Reverse-Words)
 
@@ -543,7 +543,7 @@ return ((x, y) == tuple([sum(p) for p in zip(*[{"NORTH":(0, 1),"EAST":(1, 0),"SO
 return " ".join(sentence.split()[::-1])
 ```
 
-## ⚠Merging Two Sorted Lists
+## 🧩 Merging Two Sorted Lists
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Merging-Two-Sorted-Lists)
 
@@ -557,7 +557,7 @@ return " ".join(sentence.split()[::-1])
 return sorted(a + b)
 ```
 
-## ⚠Sum of First N Odd Integers
+## 🧩 Sum of First N Odd Integers
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Sum-of-First-N-Odd-Integers)
 
@@ -571,7 +571,7 @@ return sorted(a + b)
 return n*n
 ```
 
-## ⚠Check Palindrome
+## 🧩 Check Palindrome
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Check-Palindrome)
 
@@ -585,7 +585,7 @@ return n*n
 return ([1 for i in range(len(s)//2) if s[i] != s[len(s) - 1 - i]].count(1) == 0)
 ```
 
-## ⚠Detect the Only Duplicate in a List
+## 🧩 Detect the Only Duplicate in a List
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Detect-the-Only-Duplicate-in-a-List)
 
@@ -601,7 +601,7 @@ return ([1 for i in range(len(s)//2) if s[i] != s[len(s) - 1 - i]].count(1) == 0
 return sum(nums) - sum(set(nums))
 ```
 
-## ⚠Minimum Initial Value for Positive Prefix Sums
+## 🧩 Minimum Initial Value for Positive Prefix Sums
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Minimum-Initial-Value-for-Positive-Prefix-Sums)
 
@@ -615,7 +615,7 @@ return sum(nums) - sum(set(nums))
 return 1 if not nums or min(accumulate(nums)) > 0  else (abs(min(accumulate(nums))) + 1)
 ```
 
-## ⚠Consecutive Duplicates
+## 🧩 Consecutive Duplicates
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Consecutive-Duplicates)
 
@@ -629,7 +629,7 @@ return 1 if not nums or min(accumulate(nums)) > 0  else (abs(min(accumulate(nums
 return "".join(x for x,_ in groupby(s))
 ```
 
-## ⚠Strictly Increasing or Strictly Decreasing
+## 🧩 Strictly Increasing or Strictly Decreasing
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Strictly-Increasing-or-Strictly-Decreasing)
 
@@ -659,7 +659,7 @@ return abs(sum([1 if i > j else -1 if i < j else 0 for i, j in zip(nums, nums[1:
 
 - if list is strictly increasing or strictly decreasing, then number of 1s or -1s must equal `len(input)-1`
 
-## ⚠Shortest String
+## 🧩 Shortest String
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Shortest-String)
 
@@ -673,7 +673,7 @@ return abs(sum([1 if i > j else -1 if i < j else 0 for i, j in zip(nums, nums[1:
 return len(reduce(lambda a, b: a + b if not a or a[-1] == b else a[:-1], s)) if s else 0
 ```
 
-## ⚠123 Number Flip
+## 🧩 123 Number Flip
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/123-Number-Flip)
 
@@ -691,7 +691,7 @@ return max([int(str(n)[:i] + "3" + str(n)[i+1:]) for i in range(len(str(n)))])
 
 - Convert input list to string, generate list of all possible replacements, return max.
 
-## ⚠3-6-9
+## 🧩 3-6-9
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/3-6-9)
 
@@ -707,7 +707,7 @@ return max([int(str(n)[:i] + "3" + str(n)[i+1:]) for i in range(len(str(n)))])
 return ["clap" if not i%3 else "clap" if "3" in str(i) or "6" in str(i) or "9" in str(i) else str(i) for i in range(1, n + 1)]
 ```
 
-## ⚠Even-Frequency
+## 🧩 Even-Frequency
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Even-Frequency)
 
@@ -727,7 +727,7 @@ return len(list(filter(bool, [1 - len(list(x)) % 2 == 0 for _,x in groupby(sorte
 return not any([i%2 for i in Counter(nums).values()])
 ```
 
-## ⚠Minimum Cost Sort
+## 🧩 Minimum Cost Sort
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Minimum-Cost-Sort)
 
@@ -738,7 +738,7 @@ return not any([i%2 for i in Counter(nums).values()])
 **Answer**:
 
 ```python
-return min(sum([abs(i - j) for i, j in zip(nums, sorted(nums))]), sum([abs(i - j) for i, j in zip(nums, sorted(nums)[::-1])]))## ⚠3 and 7
+return min(sum([abs(i - j) for i, j in zip(nums, sorted(nums))]), sum([abs(i - j) for i, j in zip(nums, sorted(nums)[::-1])]))## 🧩 3 and 7
 ```
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/3-and-7)
@@ -759,7 +759,7 @@ Chicken McNugget Theorem aka Postage Stamp Problem. Given any two relatively pr
 
 For a = 3 and b = 7 if n > (3×7-3-7) the answer is true.
 
-## ⚠Max Product of Two Numbers
+## 🧩 Max Product of Two Numbers
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Max-Product-of-Two-Numbers)
 
@@ -773,7 +773,7 @@ For a = 3 and b = 7 if n > (3×7-3-7) the answer is true.
 return max(reduce(lambda x, y: x * y, sorted(nums)[-2:]), reduce(lambda x, y: x * y, sorted(nums)[:2]))
 ```
 
-## ⚠Equivalent Value and Frequency
+## 🧩 Equivalent Value and Frequency
 
 **Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Equivalent-Value-and-Frequency)
 
@@ -789,7 +789,7 @@ return max(reduce(lambda x, y: x * y, sorted(nums)[-2:]), reduce(lambda x, y: x 
 return len(list(filter(bool, (x == len(list(y)) for x, y in groupby(sorted(nums)))))) != 0
 ```
 
-## ⚠Line of People
+## 🧩 Line of People
 
 **Source**: [binarysearch | Learn Algorithms Together]([https://binarysearch.com/problems/Equivalent-Value-and-Frequency](https://binarysearch.com/problems/Line-of-People))
 
