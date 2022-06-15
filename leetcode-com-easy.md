@@ -199,7 +199,7 @@ return sum(set(nums)) * 2 - sum(nums)
 
 **Explanation**:
 
-It's just simple mathematic solution.
+It's just simple mathematic approach.
 
 
 
