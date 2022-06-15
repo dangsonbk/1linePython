@@ -180,3 +180,35 @@ Solution is to find the first number i that i*i > x, then minus with 1.
 
 - If x = 2, then next() returns default value of 2, 2 - 1 = 1
 - Other cases: input 0 returns 0, input 1 returns 1
+
+## 🧩 Single Number
+
+**Source**: [Single Number](https://leetcode.com/problems/single-number/)
+
+**Description**:
+
+> Given a **non-empty** array of integers `nums`, every element appears *twice* except for one. Find that single one.
+> 
+> You must implement a solution with a linear runtime complexity and use only constant extra space.
+
+**Answer 1**:
+
+```python
+return sum(set(nums)) * 2 - sum(nums)
+```
+
+**Explanation**:
+
+It's just simple mathematic solution.
+
+
+
+**Answer 2**:
+
+```python
+return reduce(lambda p, n: p ^ n, nums)
+```
+
+**Explanation**:
+
+Base on this genius solution from [leetcode](https://leetcode.com/problems/single-number/discuss/1771771/Think-it-through-oror-Time%3A-O(n)-Space%3A-O(1)-oror-Python-Explained).
