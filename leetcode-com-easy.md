@@ -139,3 +139,44 @@ return reduce(lambda p, c: p+c if c.isalpha() or c.isnumeric() else p, ' ' + s).
 **Explanations**:
 
 - I don't know why it's not TLE lmao.
+
+## 🧩 Squares of a Sorted Array
+
+**Source**: [Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/)
+
+**Description**:
+
+> Given an integer array `nums` sorted in **non-decreasing** order, return *an array of **the squares of each number** sorted in non-decreasing order*.
+
+**Answer**:
+
+```python
+return sorted(map(lambda n: n*n, nums))
+```
+
+## 🧩 Sqrt(x)
+
+**Source**: [Sqrt(x)](https://leetcode.com/problems/sqrtx/)
+
+**Description**:
+
+> Given a non-negative integer `x`, compute and return *the square root of* `x`.
+> 
+> Since the return type is an integer, the decimal digits are **truncated**, and only **the integer part** of the result is returned.
+> 
+> **Note:** You are not allowed to use any built-in exponent function or operator, such as `pow(x, 0.5)` or `x ** 0.5`.
+
+**Answer**:
+
+```python
+return next((i for i in range(0, x) if i*i > x), 2) - 1 if x > 1 else x
+```
+
+**Explanations**:
+
+Note that the requirement is: You are not allowed to use any built-in exponent function or operator, such as `pow(x, 0.5)` or `x ** 0.5`. Without this, the solution could be as easy as: `floor(sqrt(x))`
+
+Solution is to find the first number i that i*i > x, then minus with 1.
+
+- If x = 2, then next() returns default value of 2, 2 - 1 = 1
+- Other cases: input 0 returns 0, input 1 returns 1
