@@ -363,3 +363,66 @@ return '.'.join([str(n)[max(0, i-3):i] for i in range(len(str(n)), 0, -3)][::-1]
 ```python
 return ''.join([s[indices.index(i)] for i in range(len(s))])
 ```
+
+## 🧩 Concatenation of Array
+
+**Source**: [Concatenation of Array](https://leetcode.com/problems/concatenation-of-array/)
+
+**Description**:
+
+> Given an integer array `nums` of length `n`, you want to create an array `ans` of length `2n` where `ans[i] == nums[i]` and `ans[i + n] == nums[i]` for `0 <= i < n` (**0-indexed**).
+> 
+> Specifically, `ans` is the **concatenation** of two `nums` arrays.
+> 
+> Return *the array* `ans`.
+
+**Answer**:
+
+```python
+return nums*2
+```
+
+## 🧩 Build Array from Permutation
+
+**Source**: [Build Array from Permutation](https://leetcode.com/problems/build-array-from-permutation/)
+
+**Description**:
+
+> Given a **zero-based permutation** `nums` (**0-indexed**), build an array `ans` of the **same length** where `ans[i] = nums[nums[i]]` for each `0 <= i < nums.length` and return it.
+> 
+> A **zero-based permutation** `nums` is an array of **distinct** integers from `0` to `nums.length - 1` (**inclusive**).
+
+**Answer**:
+
+```python
+return [nums[nums[i]] for i in range(0, len(nums))]
+```
+
+## 🧩 Running Sum of 1d Array
+
+**Source**: [Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array)
+
+**Description**:
+
+> Given an array `nums`. We define a running sum of an array as `runningSum[i] = sum(nums[0]…nums[i])`.
+> 
+> Return the running sum of `nums`.
+
+**Answer**:
+
+```python
+return accumulate(nums)
+# Using reduce
+return reduce(lambda p, n: p + [p[-1] + n], [[0]] + nums)[1:]
+# Using list comprehension with sum()
+return [sum(nums[:i]) for i in range(1, len(nums) + 1)]
+```
+
+**Bonus**:
+
+This [answer](https://leetcode.com/problems/running-sum-of-1d-array/discuss/841274/Python-3-Multiple-One-Liners/925943) is hilarious:
+
+```python
+class Solution:
+    runningSum=accumulate
+```
