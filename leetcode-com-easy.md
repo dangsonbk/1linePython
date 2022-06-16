@@ -201,8 +201,6 @@ return sum(set(nums)) * 2 - sum(nums)
 
 It's just simple mathematic approach.
 
-
-
 **Answer 2**:
 
 ```python
@@ -212,3 +210,40 @@ return reduce(lambda p, n: p ^ n, nums)
 **Explanation**:
 
 Base on this genius solution from [leetcode](https://leetcode.com/problems/single-number/discuss/1771771/Think-it-through-oror-Time%3A-O(n)-Space%3A-O(1)-oror-Python-Explained).
+
+## 🧩 Reverse Bits
+
+**Source**: [Reverse Bits](https://leetcode.com/problems/reverse-bits/)
+
+**Description**:
+
+> Reverse bits of a given 32 bits unsigned integer.
+> 
+> **Note:**
+> 
+> - Note that in some languages, such as Java, there is no unsigned integer type. In this case, both input and output will be given as a signed integer type. They should not affect your implementation, as the integer's internal binary representation is the same, whether it is signed or unsigned.
+> - In Java, the compiler represents the signed integers using [2's complement notation](https://en.wikipedia.org/wiki/Two%27s_complement). Therefore, in **Example 2** above, the input represents the signed integer `-3` and the output represents the signed integer `-1073741825`.
+
+**Answer**:
+
+```python
+return int(bin(n)[2:][::-1].ljust(32, '0'), 2)
+```
+
+## 🧩 Count Prefixes of a Given String
+
+**Source**: [Count Prefixes of a Given String](https://leetcode.com/problems/count-prefixes-of-a-given-string/)
+
+**Description**:
+
+> You are given a string array `words` and a string `s`, where `words[i]` and `s` comprise only of **lowercase English letters**.
+> 
+> Return *the **number of strings** in* `words` *that are a **prefix** of* `s`.
+> 
+> A **prefix** of a string is a substring that occurs at the beginning of the string. A **substring** is a contiguous sequence of characters within a string.
+
+**Answer**:
+
+```python
+return len([w for w in words if w == s[:len(w)]])
+```
