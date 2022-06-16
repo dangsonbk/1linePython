@@ -311,24 +311,24 @@ return s.count(letter) * 100 // len(s)
 **Answer 1**:
 
 ```python
-return [triple for triple in ['','000','111','222','333','444','555','666','777','888','999'] if triple in num][-1]
+return [triple for triple in ['999','888','777','666','555','444','333','222','111','000',''] if triple in num][0]
 ```
 
 **Explanations**:
 
 - Check if each triple in inputted `num`.
-- The last triple that found is the largest, so get the [-1]
-- As `''` always in any string, if no triple found in `num`, `[''][-1]` is returned.
+- The first triple that found is the largest, so get the [0]
+- As `''` always in any string, if no triple found in `num`, `[''][0]` is returned.
 
 **Answer 2**:
 
 ```python
-return next((triple for triple in ['999', '888', '777', '666', '555', '444', '333', '222', '111', '000'] if triple in num), '')
+return next((triple for triple in ['999','888','777','666','555','444','333','222','111','000'] if triple in num), '')
 ```
 
 **Explanations**:
 
-- Reverse the triple list, use `next()` to find the first triple.
+- Use `next()` to find the first triple.
 
 - The triple list is in decreasing order, the first triple that found is the largest.
 
