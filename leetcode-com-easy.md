@@ -275,3 +275,47 @@ return num1 + num2
 ```python
 return reduce(lambda a, n: a if abs(a) < abs(n) else max(a, n) if abs(a) == abs(n) else n, nums)
 ```
+
+## 🧩 Percentage of Letter in String
+
+**Source**: [Percentage of Letter in String](https://leetcode.com/problems/percentage-of-letter-in-string)
+
+**Description**:
+
+> Given a string `s` and a character `letter`, return *the **percentage** of characters in* `s` *that equal* `letter` **rounded down** to the nearest whole percent.
+
+**Answer**:
+
+```python
+return s.count(letter) * 100 // len(s)
+```
+
+## 🧩 Problem Title
+
+**Source**: [Largest 3-Same-Digit Number in String](https://leetcode.com/problems/largest-3-same-digit-number-in-string)
+
+**Description**:
+
+> You are given a string `num` representing a large integer. An integer is **good** if it meets the following conditions:
+> 
+> - It is a **substring** of `num` with length `3`.
+> - It consists of only one unique digit.
+> 
+> Return *the **maximum good** integer as a **string** or an empty string* `""` *if no such integer exists*.
+> 
+> Note:
+> 
+> - A **substring** is a contiguous sequence of characters within a string.
+> - There may be **leading zeroes** in `num` or a good integer.
+
+**Answer**:
+
+```python
+return [triple for triple in ['','000','111','222','333','444','555','666','777','888','999'] if triple in num][-1]
+```
+
+**Explanations**:
+
+- Just check if each triple in inputted `num`.
+- The last triple that found is the largest, so get the [-1]
+- As `''` always in any string, so if no triple found in `num`, `''` is returned.
