@@ -247,3 +247,31 @@ return int(bin(n)[2:][::-1].ljust(32, '0'), 2)
 ```python
 return len([w for w in words if w == s[:len(w)]])
 ```
+
+## 🧩 Add Two Integers
+
+**Source**: [Add Two Integers](https://leetcode.com/problems/add-two-integers/)
+
+**Description**:
+
+> Given two integers `num1` and `num2`, return *the **sum** of the two integers*.
+
+**Answer**:
+
+```python
+return num1 + num2
+```
+
+## 🧩 Find Closest Number to Zero
+
+**Source**: [Find Closest Number to Zero](https://leetcode.com/problems/find-closest-number-to-zero)
+
+**Description**:
+
+> Given an integer array `nums` of size `n`, return *the number with the value **closest** to* `0` *in* `nums`. If there are multiple answers, return *the number with the **largest** value*.
+
+**Answer**:
+
+```python
+return reduce(lambda a, n: a if abs(a) < abs(n) else max(a, n) if abs(a) == abs(n) else n, nums)
+```
