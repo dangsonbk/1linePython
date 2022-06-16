@@ -333,3 +333,33 @@ return next((triple for triple in ['999','888','777','666','555','444','333','22
 - The triple list is in decreasing order, the first triple that found is the largest.
 
 - If no triple found, `next()` returns default value of `''`
+
+## 🧩 Thousand Separator
+
+**Source**: [Thousand Separator](https://leetcode.com/problems/thousand-separator)
+
+**Description**:
+
+> Given an integer `n`, add a dot (".") as the thousands separator and return it in string format.
+
+**Answer**:
+
+```python
+return '.'.join([str(n)[max(0, i-3):i] for i in range(len(str(n)), 0, -3)][::-1])
+```
+
+## 🧩 Shuffle String
+
+**Source**: [Shuffle String](https://leetcode.com/problems/shuffle-string/)
+
+**Description**:
+
+> You are given a string `s` and an integer array `indices` of the **same length**. The string `s` will be shuffled such that the character at the `ith` position moves to `indices[i]` in the shuffled string.
+> 
+> Return *the shuffled string*.
+
+**Answer**:
+
+```python
+return ''.join([s[indices.index(i)] for i in range(len(s))])
+```
