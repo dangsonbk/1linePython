@@ -290,7 +290,7 @@ return reduce(lambda a, n: a if abs(a) < abs(n) else max(a, n) if abs(a) == abs(
 return s.count(letter) * 100 // len(s)
 ```
 
-## 🧩 Problem Title
+## 🧩 Largest 3-Same-Digit Number in String
 
 **Source**: [Largest 3-Same-Digit Number in String](https://leetcode.com/problems/largest-3-same-digit-number-in-string)
 
