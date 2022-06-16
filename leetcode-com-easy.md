@@ -312,7 +312,6 @@ return s.count(letter) * 100 // len(s)
 
 ```python
 return [triple for triple in ['','000','111','222','333','444','555','666','777','888','999'] if triple in num][-1]
-# Runtime: 47 ms
 ```
 
 **Explanations**:
