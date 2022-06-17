@@ -426,3 +426,74 @@ This [answer](https://leetcode.com/problems/running-sum-of-1d-array/discuss/8412
 class Solution:
     runningSum=accumulate
 ```
+
+## 🧩 Final Value of Variable After Performing Operations
+
+**Source**: [Final Value of Variable After Performing Operations](https://leetcode.com/problems/final-value-of-variable-after-performing-operations/)
+
+**Description**:
+
+> There is a programming language with only **four** operations and **one** variable `X`:
+> 
+> - `++X` and `X++` **increments** the value of the variable `X` by `1`.
+> - `--X` and `X--` **decrements** the value of the variable `X` by `1`.
+> 
+> Initially, the value of `X` is `0`.
+> 
+> Given an array of strings `operations` containing a list of operations, return *the **final** value of* `X` *after performing all the operations*.
+
+**Answer**:
+
+```python
+return sum([-1 if "--" in op else 1 for op in operations])
+```
+
+## 🧩 Richest Customer Wealth
+
+**Source**: [Richest Customer Wealth](https://leetcode.com/problems/richest-customer-wealth/)
+
+**Description**:
+
+> You are given an `m x n` integer grid `accounts` where `accounts[i][j]` is the amount of money the `i​​​​​​​​​​​th​​​​` customer has in the `j​​​​​​​​​​​th`​​​​ bank. Return *the **wealth** that the richest customer has.*
+> 
+> A customer's **wealth** is the amount of money they have in all their bank accounts. The richest customer is the customer that has the maximum **wealth**.
+
+**Answer**:
+
+```python
+return max(map(sum, accounts))
+```
+
+## 🧩 Defanging an IP Address
+
+**Source**: [Defanging an IP Address](https://leetcode.com/problems/defanging-an-ip-address/)
+
+**Description**:
+
+> Given a valid (IPv4) IP `address`, return a defanged version of that IP address.
+> 
+> A *defanged IP address* replaces every period `"."` with `"[.]"`.
+
+**Answer**:
+
+```python
+return address.replace(".", "[.]")
+```
+
+## 🧩 Maximum Number of Words Found in Sentences
+
+**Source**: [Maximum Number of Words Found in Sentences](https://leetcode.com/problems/maximum-number-of-words-found-in-sentences/)
+
+**Description**:
+
+> A **sentence** is a list of **words** that are separated by a single space with no leading or trailing spaces.
+> 
+> You are given an array of strings `sentences`, where each `sentences[i]` represents a single **sentence**.
+> 
+> Return *the **maximum number of words** that appear in a single sentence*.
+
+**Answer**:
+
+```python
+return max(map(len, map(lambda s: s.split(), sentences)))
+```
