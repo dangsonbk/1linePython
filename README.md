@@ -5,13 +5,13 @@ Collection of one-liner Python answers on some online code challenges.
 Idea of this repository came when I challenged [shinez1997](https://github.com/shinez1997) for resolving code problems on [binarysearch.com](https://binarysearch.com/) with only one line of Python code. He is better than me in every aspect of coding and this is only way I can beat him somehow.
 
 ## Rules
-- 1 line means same line with the `return`.
+- Answer is on the same line with the `return`.
 - No module imported except defaults by code challenge platforms.
 - Must not reach TLE of code challenge platform.
 - Hack, trick or whatever that fit in one line and pass the tests is accepted.
 
 Example:
-```
+```python
 class Solution:
     def minAddToMakeValid(self, s: str) -> int:
         return len(functools.reduce(lambda c1, c2: c2 if not c1 else c1[:-1] if c2==")" and c1[-1] == "(" else c1 + c2, s)) if s else len(s)
