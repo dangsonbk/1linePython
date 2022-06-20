@@ -12,8 +12,10 @@ Idea of this repository came when I challenged [shinez1997](https://github.com/s
 
 Example:
 ```python
-class Solution:
-    def minAddToMakeValid(self, s: str) -> int:
+# functools is imported by default
+class Solution: # default by online judge
+    def minAddToMakeValid(self, s: str) -> int:  # default by online judge
+        # answer fit in one line
         return len(functools.reduce(lambda c1, c2: c2 if not c1 else c1[:-1] if c2==")" and c1[-1] == "(" else c1 + c2, s)) if s else len(s)
 ```
 
