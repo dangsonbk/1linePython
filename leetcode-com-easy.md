@@ -599,7 +599,7 @@ return sum([1 for s in stones if s in jewels])
 
 ## 🧩 Kids With the Greatest Number of Candies
 
-**Source**: [Link](#)
+**Source**: [Kids With the Greatest Number of Candies](https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/)
 
 **Description**:
 
@@ -642,3 +642,64 @@ return sorted(set(nums))[-3] if len(set(nums)) > 2 else max(nums)
 Sort the list in increasing order then get the item with index -3.
 
 As we does not count the number with same value, convert the list with `set()`
+
+## 🧩 Reverse Words in a String III
+
+**Source**: [Reverse Words in a String III](https://leetcode.com/problems/reverse-words-in-a-string-iii/)
+
+**Description**:
+
+> Given a string `s`, reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.
+
+**Answer**:
+
+```python
+return ' '.join([w[::-1] for w in s.split()])
+```
+
+## 🧩 Minimum Time Visiting All Points
+
+**Source**: [Minimum Time Visiting All Points](https://leetcode.com/problems/minimum-time-visiting-all-points/)
+
+**Description**:
+
+> On a 2D plane, there are `n` points with integer coordinates `points[i] = [xi, yi]`. Return *the **minimum time** in seconds to visit all the points in the order given by* `points`.
+> 
+> You can move according to these rules:
+> 
+> - In `1` second, you can either:
+>   - move vertically by one unit,
+>   - move horizontally by one unit, or
+>   - move diagonally `sqrt(2)` units (in other words, move one unit vertically then one unit horizontally in `1` second).
+> - You have to visit the points in the same order as they appear in the array.
+> - You are allowed to pass through points that appear later in the order, but these do not count as visits.
+
+**Answer**:
+
+```python
+return sum([max(abs(p[1][0] - p[0][0]), abs(p[1][1] - p[0][1])) for p in pairwise(points)])
+```
+
+**Explanation**:
+
+- Number of moves between `(x0, y0)` and `(x1, y1)` equals number of moves between `(0, 0)` and `(abs(x1-x0), abs(y1-y0))`, call it `(delta_x, delta_y)`.
+  
+  Assumes that `delta_y` > `delta_x`, the best path is to start from `(0, 0)` to `(delta_x, delta_x)`, then move from `(delta_x, delta_x)` to `(delta_x, delta_y)`. The first path takes `delta_x` moves, second path takes `delta_y - delta_x` moves. The total number of moves is `delta_x + delta_y - delta_x = delta_y`
+  
+  Vice versa it takes `delta_x` moves if `delta_x` > `delta_y`
+
+## 🧩 Maximum 69 Number
+
+**Source**: [Maximum 69 Number](https://leetcode.com/problems/maximum-69-number/)
+
+**Description**:
+
+> You are given a positive integer `num` consisting only of digits `6` and `9`.
+> 
+> Return *the maximum number you can get by changing **at most** one digit (*`6` *becomes* `9`*, and* `9` *becomes* `6`*)*.
+
+**Answer**:
+
+```python
+return int(str(num).replace('6', '9', 1))
+```

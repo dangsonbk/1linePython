@@ -5,12 +5,14 @@ A collection of one-liner Python answers on some online code challenges.
 The idea of this repository came when I challenged [shinez1997](https://github.com/shinez1997) to resolve code problems on [binarysearch.com](https://binarysearch.com/) with only one line of Python code. He is better than me in every aspect of coding, and this is only way I can beat him somehow.
 
 ## Rules
+
 - The answer is on the same line with the `return`.
 - No module is imported except defaults by code challenge platforms.
 - Must not reach the TLE of the code challenge platform.
 - Hacks, tricks, or whatever that fits in one line and pass the tests is accepted.
 
 Example:
+
 ```python
 # functools is imported by default
 class Solution: # default by online judge
@@ -20,6 +22,7 @@ class Solution: # default by online judge
 ```
 
 ## Real life usage
+
 - Just don't.
 - When you hate your future self.
 - When you hate your company, you are willing to leave, you want your product run but be unmaintainable.
