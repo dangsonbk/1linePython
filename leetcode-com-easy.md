@@ -576,3 +576,69 @@ return sum(k * (k - 1) / 2 for k in collections.Counter(A).values())
 **Explanation:**
 
 Credit to [lee215](https://leetcode.com/problems/number-of-good-pairs/discuss/731561/JavaC%2B%2BPython-Count), please upvote him.
+
+## 🧩 Jewels and Stones
+
+**Source**: [Jewels and Stones](https://leetcode.com/problems/jewels-and-stones/)
+
+**Description**:
+
+> You're given strings `jewels` representing the types of stones that are jewels, and `stones` representing the stones you have. Each character in `stones` is a type of stone you have. You want to know how many of the stones you have are also jewels.
+> 
+> Letters are case sensitive, so `"a"` is considered a different type of stone from `"A"`.
+> 
+> - `1 <= jewels.length, stones.length <= 50`
+> - `jewels` and `stones` consist of only English letters.
+> - All the characters of `jewels` are **unique**.
+
+**Answer**:
+
+```python
+return sum([1 for s in stones if s in jewels])
+```
+
+## 🧩 Kids With the Greatest Number of Candies
+
+**Source**: [Link](#)
+
+**Description**:
+
+> There are `n` kids with candies. You are given an integer array `candies`, where each `candies[i]` represents the number of candies the `ith` kid has, and an integer `extraCandies`, denoting the number of extra candies that you have.
+> 
+> Return *a boolean array* `result` *of length* `n`*, where* `result[i]` *is* `true` *if, after giving the* `ith` *kid all the* `extraCandies`*, they will have the **greatest** number of candies among all the kids**, or* `false` *otherwise*.
+> 
+> Note that **multiple** kids can have the **greatest** number of candies.
+> 
+> - `n == candies.length`
+> - `2 <= n <= 100`
+> - `1 <= candies[i] <= 100`
+> - `1 <= extraCandies <= 50`
+
+**Answer**:
+
+```python
+return [k + extraCandies >= max(candies) for k in candies]
+```
+
+## 🧩 Third Maximum Number
+
+**Source**: [Third Maximum Number](https://leetcode.com/problems/third-maximum-number/)
+
+**Description**:
+
+> Given an integer array `nums`, return *the **third distinct maximum** number in this array. If the third maximum does not exist, return the **maximum** number*.
+> 
+> - `1 <= nums.length <= 104`
+> - `-231 <= nums[i] <= 231 - 1`
+
+**Answer**:
+
+```python
+return sorted(set(nums))[-3] if len(set(nums)) > 2 else max(nums)
+```
+
+**Explanation**:
+
+Sort the list in increasing order then get the item with index -3.
+
+As we does not count the number with same value, convert the list with `set()`
