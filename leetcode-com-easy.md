@@ -703,3 +703,59 @@ return sum([max(abs(p[1][0] - p[0][0]), abs(p[1][1] - p[0][1])) for p in pairwis
 ```python
 return int(str(num).replace('6', '9', 1))
 ```
+
+## 🧩 Find First Palindromic String in the Array
+
+**Source**: [Find First Palindromic String in the Array](https://leetcode.com/problems/find-first-palindromic-string-in-the-array/)
+
+**Description**:
+
+> Given an array of strings `words`, return *the first **palindromic** string in the array*. If there is no such string, return *an **empty string*** `""`.
+> 
+> A string is **palindromic** if it reads the same forward and backward.
+
+**Answer**:
+
+```python
+return next((w for w in words if w == w[::-1]), '')
+```
+
+## 🧩 Number Of Rectangles That Can Form The Largest Square
+
+**Source**: [Number Of Rectangles That Can Form The Largest Square](https://leetcode.com/problems/number-of-rectangles-that-can-form-the-largest-square/)
+
+**Description**:
+
+> You are given an array `rectangles` where `rectangles[i] = [li, wi]` represents the `ith` rectangle of length `li` and width `wi`.
+> 
+> You can cut the `ith` rectangle to form a square with a side length of `k` if both `k <= li` and `k <= wi`. For example, if you have a rectangle `[4,6]`, you can cut it to get a square with a side length of at most `4`.
+> 
+> Let `maxLen` be the side length of the **largest** square you can obtain from any of the given rectangles.
+> 
+> Return *the **number** of rectangles that can make a square with a side length of* `maxLen`.
+
+**Answer**:
+
+```python
+return [min(l) for l in rectangles].count(max([min(l) for l in rectangles]))
+```
+
+**Notice**:
+
+What a shame to write code like this. I'm sorry.
+
+## 🧩 Find the Highest Altitude
+
+**Source**: [Find the Highest Altitude](https://leetcode.com/problems/find-the-highest-altitude/)
+
+**Description**:
+
+> There is a biker going on a road trip. The road trip consists of `n + 1` points at different altitudes. The biker starts his trip on point `0` with altitude equal `0`.
+> 
+> You are given an integer array `gain` of length `n` where `gain[i]` is the **net gain in altitude** between points `i`​​​​​​ and `i + 1` for all (`0 <= i < n)`. Return *the **highest altitude** of a point.*
+
+**Answer**:
+
+```python
+return max(accumulate([0] + gain))
+```
