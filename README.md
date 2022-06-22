@@ -8,7 +8,7 @@ The idea of this repository came when I challenged [shinez1997](https://github.c
 - The answer is on the same line with the `return`.
 - No module is imported except defaults by code challenge platforms.
 - Must not reach the TLE of the code challenge platform.
-- Hack, trick, or whatever that fits in one line and pass the tests is accepted.
+- Hacks, tricks, or whatever that fits in one line and pass the tests is accepted.
 
 Example:
 ```python
@@ -22,7 +22,7 @@ class Solution: # default by online judge
 ## Real life usage
 - Just don't.
 - When you hate your future self.
-- When you hate your company, you are willing to leave, you want your product run but unmaintainable.
+- When you hate your company, you are willing to leave, you want your product run but be unmaintainable.
 
 ## Notes
 
