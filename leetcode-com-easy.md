@@ -843,3 +843,20 @@ return collections.Counter(s) == collections.Counter(t)
 
 **Explanations**:
 `collections.Counter()` [is a dict subclass for counting hashable objects](https://docs.python.org/3/library/collections.html#collections.Counter). Simply checking if they are equal does the trick.
+
+## 🧩 Missing Number
+
+**Source**: [Missing Number](https://leetcode.com/problems/missing-number/)
+
+**Description**:
+
+> Given an array `nums` containing `n` distinct numbers in the range `[0, n]`, return *the only number in the range that is missing from the array*.
+
+**Answer**:
+
+```python
+return sum(range(1, len(nums) + 1)) - sum(nums)
+```
+
+**Explanations**:
+Taking the difference between the sum of the numbers, and the whole range, will reveal the missing number.
