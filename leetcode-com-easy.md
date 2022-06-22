@@ -784,3 +784,20 @@ return haystack.find(needle)
 
 **Explanations**:
 Edge cases already taken care of.
+
+## 🧩 Contains Duplicate
+
+**Source**: [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
+
+**Description**:
+
+> Given an integer array `nums`, return `true` if any value appears **at least twice** in the array, and return `false` if every element is distinct.
+
+**Answer**:
+
+```python
+return len(set(nums)) != len(nums)
+```
+
+**Explanations**:
+`set()` deletes all duplicates. Therefore, if its length is different than the original list, at least 1 element is repeated.
