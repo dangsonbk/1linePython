@@ -19,6 +19,11 @@ class Solution: # default by online judge
         return len(functools.reduce(lambda c1, c2: c2 if not c1 else c1[:-1] if c2==")" and c1[-1] == "(" else c1 + c2, s)) if s else len(s)
 ```
 
+## Real life usages
+- Just don't.
+- When you hate your future self.
+- When you hate your company, you are willing to leave, you want your product run but unmaintainable.
+
 ## Notes
 
 - Many of the answers are not really 1-liner Python code, as they use functions from libraries.
