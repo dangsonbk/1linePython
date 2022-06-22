@@ -824,3 +824,22 @@ return n.bit_count()
 
 **Explanations**:
 Python 3.10 introduced `int.bit_count()`.
+
+## 🧩 Valid Anagram
+
+**Source**: [Valid Anagram](https://leetcode.com/problems/valid-anagram/)
+
+**Description**:
+
+> Given two strings `s` and `t`, return `true` if `t` is an anagram of `s`, and `false` otherwise.
+>
+> An **Anagram** is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+
+**Answer**:
+
+```python
+return collections.Counter(s) == collections.Counter(t)
+```
+
+**Explanations**:
+`collections.Counter()` [is a dict subclass for counting hashable objects](https://docs.python.org/3/library/collections.html#collections.Counter). Simply checking if they are equal does the trick.
