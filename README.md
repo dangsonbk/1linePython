@@ -27,8 +27,8 @@ class Solution: # default by online judge
 ## Notes
 
 - Many of the answers are not really 1-liner Python code, as they use functions from libraries.
-- Many of the answers are not the best optimized answer. They just fit under the requirement of problem's Execute Time Limit.
-- Code challenge websites usually imported some default Python libraries, but the list may vary between sites.
+- Many of the answers are not the best optimized answers. They just fit under the requirement of the problem's Execute Time Limit.
+- Code challenge websites usually import some default Python libraries, but the list may vary between sites.
 
 ## Contribution
 
