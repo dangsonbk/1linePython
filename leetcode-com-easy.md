@@ -769,3 +769,104 @@ What a shame to write code like this. I'm sorry.
 ```python
 return max(accumulate([0] + gain))
 ```
+
+## 🧩 Implement strStr()
+
+**Source**: [Implement strStr()]([#](https://leetcode.com/problems/implement-strstr/))
+
+**Description**:
+
+> Implement [strStr()](http://www.cplusplus.com/reference/cstring/strstr/).
+>
+> Given two strings `needle` and `haystack`, return the index of the first occurrence of `needle` in `haystack`, or `-1` if `needle` is not part of `haystack`.
+>
+> **Clarification:**
+>
+> What should we return when `needle` is an empty string? This is a great question to ask during an interview.
+>
+> For the purpose of this problem, we will return 0 when `needle` is an empty string. This is consistent to C's [strstr()](http://www.cplusplus.com/reference/cstring/strstr/) and Java's [indexOf()](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#indexOf(java.lang.String)).
+
+**Answer**:
+
+```python
+return haystack.find(needle)
+```
+
+**Explanations**:
+Edge cases already taken care of.
+
+## 🧩 Contains Duplicate
+
+**Source**: [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
+
+**Description**:
+
+> Given an integer array `nums`, return `true` if any value appears **at least twice** in the array, and return `false` if every element is distinct.
+
+**Answer**:
+
+```python
+return len(set(nums)) != len(nums)
+```
+
+**Explanations**:
+`set()` deletes all duplicates. Therefore, if its length is different than the original list, at least 1 element is repeated.
+
+## 🧩 Number of 1 Bits
+
+**Source**: [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/)
+
+**Description**:
+
+>Write a function that takes an unsigned integer and returns the number of '1' bits it has (also known as the [Hamming weight](http://en.wikipedia.org/wiki/Hamming_weight)).
+>
+>Note:
+>
+>    Note that in some languages, such as Java, there is no unsigned integer type. In this case, the input will be given as a signed integer type. It should not affect your implementation, as the integer's internal binary representation is the same, whether it is signed or unsigned.
+>    In Java, the compiler represents the signed integers using [2's complement notation](https://en.wikipedia.org/wiki/Two%27s_complement). Therefore, in **Example 3**, the input represents the signed integer. `-3`.
+
+
+**Answer**:
+
+```python
+return n.bit_count()
+```
+
+**Explanations**:
+Python 3.10 introduced `int.bit_count()`.
+
+## 🧩 Valid Anagram
+
+**Source**: [Valid Anagram](https://leetcode.com/problems/valid-anagram/)
+
+**Description**:
+
+> Given two strings `s` and `t`, return `true` if `t` is an anagram of `s`, and `false` otherwise.
+>
+> An **Anagram** is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+
+**Answer**:
+
+```python
+return collections.Counter(s) == collections.Counter(t)
+```
+
+**Explanations**:
+`collections.Counter()` [is a dict subclass for counting hashable objects](https://docs.python.org/3/library/collections.html#collections.Counter). Simply checking if they are equal does the trick.
+
+## 🧩 Missing Number
+
+**Source**: [Missing Number](https://leetcode.com/problems/missing-number/)
+
+**Description**:
+
+> Given an array `nums` containing `n` distinct numbers in the range `[0, n]`, return *the only number in the range that is missing from the array*.
+
+**Answer**:
+
+```python
+return sum(range(1, len(nums) + 1)) - sum(nums)
+```
+
+**Explanations**:
+Taking the difference between the sum of the numbers, and the whole range, will reveal the missing number.
