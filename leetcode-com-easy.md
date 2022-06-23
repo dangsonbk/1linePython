@@ -197,9 +197,7 @@ Solution is to find the first number i that i*i > x, then minus with 1.
 return sum(set(nums)) * 2 - sum(nums)
 ```
 
-**Explanation**:
-
-It's just simple mathematic approach.
+**Explanation**: It's just simple mathematic approach.
 
 **Answer 2**:
 
@@ -207,9 +205,7 @@ It's just simple mathematic approach.
 return reduce(lambda p, n: p ^ n, nums)
 ```
 
-**Explanation**:
-
-Base on this genius solution from [leetcode](https://leetcode.com/problems/single-number/discuss/1771771/Think-it-through-oror-Time%3A-O(n)-Space%3A-O(1)-oror-Python-Explained).
+**Explanation**: Base on this genius solution from [leetcode](https://leetcode.com/problems/single-number/discuss/1771771/Think-it-through-oror-Time%3A-O(n)-Space%3A-O(1)-oror-Python-Explained).
 
 **Answer 3**:
 
@@ -217,9 +213,7 @@ Base on this genius solution from [leetcode](https://leetcode.com/problems/singl
 return collections.Counter(nums).most_common()[-1][0]
 ```
 
-**Explanation**:
-
-Simply find the least common number.
+**Explanation**: Simply find the least common number.
 
 ## 🧩 Reverse Bits
 
@@ -750,9 +744,15 @@ return next((w for w in words if w == w[::-1]), '')
 return [min(l) for l in rectangles].count(max([min(l) for l in rectangles]))
 ```
 
-**Notice**:
+**Notice**: What a shame to write code like this. I'm sorry.
 
-What a shame to write code like this. I'm sorry.
+**Answer 2**:
+
+```python
+return sorted(Counter([min(l) for l in rectangles]).most_common())[-1][1]
+```
+
+**Explaination**: Sort the return of `most_common()`, get count value of largest rectangles.
 
 ## 🧩 Find the Highest Altitude
 
