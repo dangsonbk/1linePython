@@ -211,6 +211,16 @@ return reduce(lambda p, n: p ^ n, nums)
 
 Base on this genius solution from [leetcode](https://leetcode.com/problems/single-number/discuss/1771771/Think-it-through-oror-Time%3A-O(n)-Space%3A-O(1)-oror-Python-Explained).
 
+**Answer 3**:
+
+```python
+return collections.Counter(nums).most_common()[-1][0]
+```
+
+**Explanation**:
+
+Simply find the least common number.
+
 ## 🧩 Reverse Bits
 
 **Source**: [Reverse Bits](https://leetcode.com/problems/reverse-bits/)
