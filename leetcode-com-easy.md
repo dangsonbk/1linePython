@@ -752,7 +752,7 @@ return [min(l) for l in rectangles].count(max([min(l) for l in rectangles]))
 return sorted(Counter([min(l) for l in rectangles]).most_common())[-1][1]
 ```
 
-**Explaination**: Sort the return of `most_common()`, get count value of largest rectangles.
+**Explanation**: Sort the return of `most_common()`, get count value of largest rectangles.
 
 ## 🧩 Find the Highest Altitude
 
@@ -772,18 +772,18 @@ return max(accumulate([0] + gain))
 
 ## 🧩 Implement strStr()
 
-**Source**: [Implement strStr()]([#](https://leetcode.com/problems/implement-strstr/))
+**Source**: [Implement strStr()](https://leetcode.com/problems/implement-strstr/)
 
 **Description**:
 
 > Implement [strStr()](http://www.cplusplus.com/reference/cstring/strstr/).
->
+> 
 > Given two strings `needle` and `haystack`, return the index of the first occurrence of `needle` in `haystack`, or `-1` if `needle` is not part of `haystack`.
->
+> 
 > **Clarification:**
->
+> 
 > What should we return when `needle` is an empty string? This is a great question to ask during an interview.
->
+> 
 > For the purpose of this problem, we will return 0 when `needle` is an empty string. This is consistent to C's [strstr()](http://www.cplusplus.com/reference/cstring/strstr/) and Java's [indexOf()](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#indexOf(java.lang.String)).
 
 **Answer**:
@@ -818,13 +818,12 @@ return len(set(nums)) != len(nums)
 
 **Description**:
 
->Write a function that takes an unsigned integer and returns the number of '1' bits it has (also known as the [Hamming weight](http://en.wikipedia.org/wiki/Hamming_weight)).
->
->Note:
->
+> Write a function that takes an unsigned integer and returns the number of '1' bits it has (also known as the [Hamming weight](http://en.wikipedia.org/wiki/Hamming_weight)).
+> 
+> Note:
+> 
 >    Note that in some languages, such as Java, there is no unsigned integer type. In this case, the input will be given as a signed integer type. It should not affect your implementation, as the integer's internal binary representation is the same, whether it is signed or unsigned.
 >    In Java, the compiler represents the signed integers using [2's complement notation](https://en.wikipedia.org/wiki/Two%27s_complement). Therefore, in **Example 3**, the input represents the signed integer. `-3`.
-
 
 **Answer**:
 
@@ -842,7 +841,7 @@ Python 3.10 introduced `int.bit_count()`.
 **Description**:
 
 > Given two strings `s` and `t`, return `true` if `t` is an anagram of `s`, and `false` otherwise.
->
+> 
 > An **Anagram** is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
 
 **Answer**:
@@ -870,3 +869,61 @@ return sum(range(1, len(nums) + 1)) - sum(nums)
 
 **Explanations**:
 Taking the difference between the sum of the numbers, and the whole range, will reveal the missing number.
+
+## 🧩 To Lower Case
+
+**Source**: [To Lower Case](https://leetcode.com/problems/to-lower-case/)
+
+**Description**:
+
+> Given a string `s`, return *the string after replacing every uppercase letter with the same lowercase letter*.
+
+**Answer(s)**:
+
+```python
+return str.lower()
+return "".join(chr(ord(c) + 32) if "A" <= c <= "Z" else c for c in str)
+return "".join(chr(ord(c) + 32) if 65 <= ord(c) <= 90 else c for c in str)
+return ''.join(chr(ord(c) + 32*('A' <= c <= 'Z')) for c in s)
+```
+
+**Explanation**: [Python short 1 line ASCII & string method solutions](https://leetcode.com/problems/to-lower-case/discuss/148813/Python-short-1-line-ASCII-and-string-method-solutions)
+
+## 🧩 X of a Kind in a Deck of Cards
+
+**Source**: [X of a Kind in a Deck of Cards](https://leetcode.com/problems/x-of-a-kind-in-a-deck-of-cards)
+
+**Description**:
+
+> In a deck of cards, each card has an integer written on it.
+> 
+> Return `true` if and only if you can choose `X >= 2` such that it is possible to split the entire deck into 1 or more groups of cards, where:
+> 
+> - Each group has exactly `X` cards.
+> - All the cards in each group have the same integer.
+
+**Answer**:
+
+```python
+return reduce(gcd, Counter(deck).values()) > 1
+```
+
+## 🧩 Number of Different Integers in a String
+
+**Source**: [Number of Different Integers in a String](https://leetcode.com/problems/number-of-different-integers-in-a-string/)
+
+**Description**:
+
+> You are given a string `word` that consists of digits and lowercase English letters.
+> 
+> You will replace every non-digit character with a space. For example, `"a123bc34d8ef34"` will become `" 123  34 8  34"`. Notice that you are left with some integers that are separated by at least one space: `"123"`, `"34"`, `"8"`, and `"34"`.
+> 
+> Return *the number of **different** integers after performing the replacement operations on* `word`.
+> 
+> Two integers are considered different if their decimal representations **without any leading zeros** are different.
+
+**Answer**:
+
+```python
+return len(set([int(''.join(g[1])) for g in groupby(word, lambda c: c.isnumeric()) if g[0]]))
+```
