@@ -927,3 +927,39 @@ return reduce(gcd, Counter(deck).values()) > 1
 ```python
 return len(set([int(''.join(g[1])) for g in groupby(word, lambda c: c.isnumeric()) if g[0]]))
 ```
+
+## 🧩 Check If N and Its Double Exist
+
+**Source**: [Check If N and Its Double Exist](https://leetcode.com/problems/check-if-n-and-its-double-exist/)
+
+**Description**:
+
+> Given an array `arr` of integers, check if there exists two integers `N` and `M` such that `N` is the double of `M` ( i.e. `N = 2 * M`).
+> 
+> More formally check if there exists two indices `i` and `j` such that :
+> 
+> - `i != j`
+> - `0 <= i, j < arr.length`
+> - `arr[i] == 2 * arr[j]`
+
+**Answer**:
+
+```python
+return next((True for i in arr if i*2 in arr and i), False) if arr.count(0) < 2 else True
+```
+
+## 🧩 Search Insert Position
+
+**Source**: [Search Insert Position](https://leetcode.com/problems/search-insert-position/)
+
+**Description**:
+
+> Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+> 
+> You must write an algorithm with `O(log n)` runtime complexity.
+
+**Answer**:
+
+```python
+return next((e[0]+1 for e in enumerate(pairwise(nums)) if target >= e[1][0] and target <= e[1][1]), len(nums)) if target > nums[0] else 0
+```
