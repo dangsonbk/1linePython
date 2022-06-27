@@ -1072,7 +1072,7 @@ return n > 0 and pow(3, 19) % n == 0
 
 > Given a characters array `letters` that is sorted in **non-decreasing** order and a character `target`, return *the smallest character in the array that is larger than* `target`.
 > 
-> **Note** that the letters wrap around.
+> Note that the letters wrap around.
 > 
 > - For example, if `target == 'z'` and `letters == ['a', 'b']`, the answer is `'a'`.
 
@@ -1081,3 +1081,23 @@ return n > 0 and pow(3, 19) % n == 0
 ```python
 return next((c for c in letters if c > target), letters[0])
 ```
+
+## 🧩 Subtract the Product and Sum of Digits of an Integer
+
+**Source**: [Subtract the Product and Sum of Digits of an Integer](https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/)
+
+**Description**:
+
+> Given an integer number `n`, return the difference between the product of its digits and the sum of its digits.
+
+**Answer**:
+
+```python
+return reduce(lambda a, b: a - b, reduce(lambda p, n: [p[0]*n, p[1] + n], [[1, 0]] + list(map(int, str(n)))))
+```
+
+**Explanation:**
+
+- Seed the `reduce()` with `[1, 0]`which is `[mul, add]` results corresponding.
+
+- The second `reduce()` is to substract two values.
