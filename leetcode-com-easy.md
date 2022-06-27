@@ -963,3 +963,73 @@ return next((True for i in arr if i*2 in arr and i), False) if arr.count(0) < 2 
 ```python
 return next((e[0]+1 for e in enumerate(pairwise(nums)) if target >= e[1][0] and target <= e[1][1]), len(nums)) if target > nums[0] else 0
 ```
+
+**Answer 2**:
+
+```python
+return bisect.bisect_left(nums, target)
+```
+
+**Explanation**: [[Python] 2 Solutions: Oneliner and Classical BS explained](https://leetcode.com/problems/search-insert-position/discuss/679918/Python-2-Solutions%3A-Oneliner-and-Classical-BS-explained)
+
+## 🧩 Length of Last Word
+
+**Source**: [Length of Last Word](https://leetcode.com/problems/length-of-last-word/)
+
+**Description**:
+
+> Given a string `s` consisting of words and spaces, return *the length of the **last** word in the string.*
+> 
+> A **word** is a maximal substring consisting of non-space characters only.
+
+**Answer**:
+
+```python
+return len(s.split()[-1])
+```
+
+## 🧩 Number of Segments in a String
+
+**Source**: [Number of Segments in a String](https://leetcode.com/problems/number-of-segments-in-a-string/)
+
+**Description**:
+
+> Given a string `s`, return *the number of segments in the string*.
+> 
+> A **segment** is defined to be a contiguous sequence of **non-space characters**.
+
+**Answer**:
+
+```python
+return len(s.split())
+```
+
+## 🧩 Power of Four
+
+**Source**: [Power of Four](https://leetcode.com/problems/power-of-four/)
+
+**Description**:
+
+> Given an integer `n`, return *`true` if it is a power of four. Otherwise, return `false`*.
+> 
+> An integer `n` is a power of four, if there exists an integer `x` such that `n == 4x`.
+
+**Answer**:
+
+```python
+return n in (1, 4, 16, 64, 256, 1024, 4096, 16384, 65536, 262144, 1048576, 4194304, 16777216, 67108864, 268435456, 1073741824)
+```
+
+**Answer 2**:
+
+```python
+return (num > 0) && ((num & (num - 1)) == 0) && ((num & 0x55555555) == num);
+```
+
+**Explanation**:
+
+- [O(1) one-line solution without loops](https://leetcode.com/problems/power-of-four/discuss/80456/O(1)-one-line-solution-without-loops)
+
+- [Python one line solution with explanations](https://leetcode.com/problems/power-of-four/discuss/80461/Python-one-line-solution-with-explanations)
+
+- [Python O(1) oneliner solution, explained](https://leetcode.com/problems/power-of-four/discuss/772269/Python-O(1)-oneliner-solution-explained)
