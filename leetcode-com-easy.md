@@ -1101,3 +1101,13 @@ return reduce(lambda a, b: a - b, reduce(lambda p, n: [p[0]*n, p[1] + n], [[1, 0
 - Seed the `reduce()` with `[1, 0]`which is `[mul, add]` results corresponding.
 
 - The second `reduce()` is to substract two values.
+
+**Answer 2**
+
+```python
+return eval('*'.join(str(n))) - eval('+'.join(str(n)))
+```
+
+**Explanation**:
+
+Please upvote the author if you like it: [Python one-liner using eval function (28ms, 14MB)](https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/discuss/812200/Python-one-liner-using-eval-function-(28ms-14MB)) 
