@@ -31,7 +31,7 @@ return reduce(lambda p, n: [max(0, p[0] - 1), p[1] + n - max(0, p[0] - 1)] if p[
 
 ## 🧩 Queue Reconstruction by Height
 
-**Source**: [Queue Reconstruction by Height]([#](https://leetcode.com/problems/queue-reconstruction-by-height/))
+**Source**: [Queue Reconstruction by Height](https://leetcode.com/problems/queue-reconstruction-by-height/)
 
 **Description**:
 
