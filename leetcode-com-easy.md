@@ -1111,3 +1111,22 @@ return eval('*'.join(str(n))) - eval('+'.join(str(n)))
 **Explanation**:
 
 Please upvote the author if you like it: [Python one-liner using eval function (28ms, 14MB)](https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/discuss/812200/Python-one-liner-using-eval-function-(28ms-14MB)) 
+
+## 🧩 Fibonacci Number
+
+**Source**: [Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
+
+**Description**:
+
+> The **Fibonacci numbers**, commonly denoted `F(n)` form a sequence, called the **Fibonacci sequence**, such that each number is the sum of the two preceding ones, starting from `0` and `1`. That is,
+> 
+> F(0) = 0, F(1) = 1
+> F(n) = F(n - 1) + F(n - 2), for n > 1.
+> 
+> Given `n`, calculate `F(n)`.
+
+**Answer**:
+
+```python
+return reduce(lambda p, _: [p[1], p[0] + p[1]], range(n), [0, 1])[0]
+```

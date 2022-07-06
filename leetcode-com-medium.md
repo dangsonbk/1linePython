@@ -18,10 +18,8 @@
 **Answer**:
 
 ```python
-return reduce(lambda p, n: [max(0, p[0] - 1), p[1] + n - max(0, p[0] - 1)] if p[0] <= n else [n, p[1]], [[10001, 0]] + sorted(Counter(s).values(), reverse=1))[1]
+return reduce(lambda p, _: [p[1], p[0] + p[1]], range(n), [0, 1])[0]**Explanations**:
 ```
-
-**Explanations**:
 
 - Sort the frequency of letters in decreasing order.
 
@@ -36,7 +34,7 @@ return reduce(lambda p, n: [max(0, p[0] - 1), p[1] + n - max(0, p[0] - 1)] if p[
 **Description**:
 
 > You are given an array of people, people, which are the attributes of some people in a queue (not necessarily in order). Each people[i] = [hi, ki] represents the ith person of height hi with exactly ki other people in front who have a height greater than or equal to hi.
->
+> 
 > Reconstruct and return the queue that is represented by the input array people. The returned queue should be formatted as an array queue, where queue[j] = [hj, kj] is the attributes of the jth person in the queue (queue[0] is the person at the front of the queue).
 
 **Answer**:
@@ -46,5 +44,6 @@ return reduce(lambda p, n: p[:n[1]] + [n] + p[n[1]:] , [[]] + sorted(people, key
 ```
 
 **Explanations**:
+
 - [Visual Explanation | JAVA Greedy](https://leetcode.com/problems/queue-reconstruction-by-height/discuss/2211641/Visual-Explanation-or-JAVA-Greedy)
 - [Easy concept with Python/C++/Java Solution](https://leetcode.com/problems/queue-reconstruction-by-height/discuss/89345/Easy-concept-with-PythonC%2B%2BJava-Solution)
