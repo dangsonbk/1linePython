@@ -1130,3 +1130,19 @@ Please upvote the author if you like it: [Python one-liner using eval function (
 ```python
 return reduce(lambda p, _: [p[1], p[0] + p[1]], range(n), [0, 1])[0]
 ```
+
+## 🧩 Pascal's Triangle
+
+**Source**: [Pascal's Triangle](https://leetcode.com/problems/pascals-triangle)
+
+**Description**:
+
+> Given an integer `numRows`, return the first numRows of **Pascal's triangle**.
+> 
+> In **Pascal's triangle**, each number is the sum of the two numbers directly above it as shown:
+
+**Answer**:
+
+```python
+return accumulate([[1]] * numRows, lambda n, _: [sum(p) for p in zip(n + [0], [0] + n)])
+```
