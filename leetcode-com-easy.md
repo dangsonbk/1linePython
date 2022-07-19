@@ -1144,5 +1144,5 @@ return reduce(lambda p, _: [p[1], p[0] + p[1]], range(n), [0, 1])[0]
 **Answer**:
 
 ```python
-return accumulate([[1]] * numRows, lambda n, _: [sum(p) for p in zip(n + [0], [0] + n)])
+return accumulate([[1]] * numRows, lambda n, _: list(map(sum, zip(n + [0], [0] + n))))
 ```
