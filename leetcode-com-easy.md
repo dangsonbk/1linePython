@@ -1144,5 +1144,44 @@ return reduce(lambda p, _: [p[1], p[0] + p[1]], range(n), [0, 1])[0]
 **Answer**:
 
 ```python
-return accumulate([[1]] * numRows, lambda n, _: list(map(sum, zip(n + [0], [0] + n))))
+return accumulate([[1]] * numRows, lambda n, _: list(map(sum, pairwise([0] + n + [0]))))
+```
+
+## 🧩 Pascal's Triangle II
+
+**Source**: [Pascal's Triangle II](https://leetcode.com/problems/pascals-triangle-ii/)
+
+**Description**:
+
+> Given an integer `rowIndex`, return the `rowIndexth` (**0-indexed**) row of the **Pascal's triangle**.
+> 
+> In **Pascal's triangle**, each number is the sum of the two numbers directly above it as shown:
+
+**Answer**:
+
+```python
+return list(accumulate([[1]] * (rowIndex + 1), lambda n, _: list(map(sum, pairwise([0] + n + [0])))))[-1]
+```
+
+## 🧩 Find Triangular Sum of an Array
+
+**Source**: [Find Triangular Sum of an Array](https://leetcode.com/problems/find-triangular-sum-of-an-array/)
+
+**Description**:
+
+> You are given a **0-indexed** integer array `nums`, where `nums[i]` is a digit between `0` and `9` (**inclusive**).
+> 
+> The **triangular sum** of `nums` is the value of the only element present in `nums` after the following process terminates:
+> 
+> 1. Let `nums` comprise of `n` elements. If `n == 1`, **end** the process. Otherwise, **create** a new **0-indexed** integer array `newNums` of length `n - 1`.
+> 2. For each index `i`, where `0 <= i < n - 1`, **assign** the value of `newNums[i]` as `(nums[i] + nums[i+1]) % 10`, where `%` denotes modulo operator.
+> 3. **Replace** the array `nums` with `newNums`.
+> 4. **Repeat** the entire process starting from step 1.
+> 
+> Return *the triangular sum of* `nums`.
+
+**Answer**:
+
+```python
+return reduce(lambda p, n: list(map(lambda x: sum(x) % 10, pairwise(p))), [1] * (len(nums) - 1), nums)[0]
 ```
