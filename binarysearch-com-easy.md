@@ -791,7 +791,7 @@ return len(list(filter(bool, (x == len(list(y)) for x, y in groupby(sorted(nums)
 
 ## 🧩 Line of People
 
-**Source**: [binarysearch | Learn Algorithms Together]([https://binarysearch.com/problems/Equivalent-Value-and-Frequency](https://binarysearch.com/problems/Line-of-People))
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Line-of-People)
 
 **Description**:
 
@@ -805,4 +805,20 @@ return len(list(filter(bool, (x == len(list(y)) for x, y in groupby(sorted(nums)
 
 ```python
 return min(n - a, b + 1)
+```
+
+## 🧩 Strictly Alternating List
+
+**Source**: [binarysearch | Learn Algorithms Together](https://binarysearch.com/problems/Strictly-Alternating-List)
+
+**Description**:
+
+> You are given a list of integers nums. Return whether the list alternates from first strictly increasing to strictly decreasing and then strictly increasing etc. If a list is only strictly increasing, return true.
+
+> 
+
+**Answer**:
+
+```python
+return False if nums[1] <= nums[0] else next((False for i in range(1, len(nums)) if nums[i] == nums[i - 1]), True)
 ```
