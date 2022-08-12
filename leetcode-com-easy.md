@@ -1243,3 +1243,32 @@ return list(accumulate([[1]] * (rowIndex + 1), lambda n, _: list(map(sum, pairwi
 ```python
 return reduce(lambda p, n: list(map(lambda x: sum(x) % 10, pairwise(p))), [1] * (len(nums) - 1), nums)[0]
 ```
+
+## 🧩 Convert Sorted Array to Binary Search Tree
+
+**Source**: [Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree)
+
+**Description**:
+
+> Given an integer array nums where the elements are sorted in ascending order, convert it to a height-balanced binary search tree.
+> A height-balanced binary tree is a binary tree in which the depth of the two subtrees of every node never differs by more than one.
+
+**Answer**: Cre: [congbk92](https://github.com/congbk92)
+
+```python
+return TreeNode(nums[len(nums)//2], self.sortedArrayToBST(nums[:len(nums)//2]), self.sortedArrayToBST(nums[len(nums)//2+1:])) if len(nums) > 0 else None
+```
+
+## 🧩 Invert Binary Tree
+
+**Source**: [Invert Binary Tree]([https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree](https://leetcode.com/problems/invert-binary-tree/))
+
+**Description**:
+
+> Given the root of a binary tree, invert the tree, and return its root.
+
+**Answer**: Cre: [congbk92](https://github.com/congbk92)
+
+```python
+return TreeNode(root.val, self.invertTree(root.right), self.invertTree(root.left)) if root else None
+```
