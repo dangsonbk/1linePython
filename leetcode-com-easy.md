@@ -1261,7 +1261,7 @@ return TreeNode(nums[len(nums)//2], self.sortedArrayToBST(nums[:len(nums)//2]), 
 
 ## 🧩 Invert Binary Tree
 
-**Source**: [Invert Binary Tree]([https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree](https://leetcode.com/problems/invert-binary-tree/))
+**Source**: [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree)
 
 **Description**:
 
@@ -1271,4 +1271,18 @@ return TreeNode(nums[len(nums)//2], self.sortedArrayToBST(nums[:len(nums)//2]), 
 
 ```python
 return TreeNode(root.val, self.invertTree(root.right), self.invertTree(root.left)) if root else None
+```
+
+## 🧩 First Unique Character in a String
+
+**Source**: [First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string)
+
+**Description**:
+
+> Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
+
+**Answer**:
+
+```python
+return s.find(next((s for s, c in Counter(s).items() if c == 1), "#"))
 ```
