@@ -74,3 +74,24 @@ return reduce(lambda p, n: list(map(lambda x: sum(x) % 10, pairwise(p))), [1] * 
 **Explanations**:
 
 - Just calculate each row
+
+## 🧩 Find Triangular Sum of an Array
+
+**Source**: [Reduce Array Size to The Half](https://leetcode.com/problems/reduce-array-size-to-the-half)
+
+**Description**:
+
+> You are given an integer array arr. You can choose a set of integers and remove all the occurrences of these integers in the array.
+> 
+> Return the minimum size of the set so that at least half of the integers of the array are removed.
+
+**Answer**:
+
+```python
+return len(list(takewhile(lambda x: x < len(arr)//2, accumulate(sorted(Counter(arr).values(), reverse=True))))) + 1
+```
+
+**Explanations**:
+
+- Counter return how many times each number appears in the input array.
+- Sort Counter()'s returned values, take while the sum of values less than half the length of input array, so that we have the minimum numbers of letters that need to be removed.
