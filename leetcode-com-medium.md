@@ -75,7 +75,7 @@ return reduce(lambda p, n: list(map(lambda x: sum(x) % 10, pairwise(p))), [1] * 
 
 - Just calculate each row
 
-## 🧩 Find Triangular Sum of an Array
+## 🧩 Reduce Array Size to The Half
 
 **Source**: [Reduce Array Size to The Half](https://leetcode.com/problems/reduce-array-size-to-the-half)
 
