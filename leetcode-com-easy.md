@@ -1311,3 +1311,18 @@ return s.find(next((s for s, c in Counter(s).items() if c == 1), "#"))
 ```python
 return len(set([reduce(lambda p, c: p + [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."][ord(c)-97], w, "") for w in words]))
 ```
+
+## 🧩 Ransom Note
+
+**Source**: [Unique Morse Code Words](https://leetcode.com/problems/ransom-note/)
+
+**Description**:
+
+> Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.
+> Each letter in magazine can only be used once in ransomNote.
+
+**Answer**:
+
+```python
+return not Counter(ransomNote) - Counter(magazine)
+```
