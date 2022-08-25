@@ -1314,7 +1314,7 @@ return len(set([reduce(lambda p, c: p + [".-","-...","-.-.","-..",".","..-.","--
 
 ## 🧩 Ransom Note
 
-**Source**: [Unique Morse Code Words](https://leetcode.com/problems/ransom-note/)
+**Source**: [Ransom Note](https://leetcode.com/problems/ransom-note/)
 
 **Description**:
 
