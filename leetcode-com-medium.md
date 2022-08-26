@@ -120,5 +120,5 @@ return len(list(takewhile(lambda x: x < len(arr)//2, accumulate(sorted(Counter(a
 **Answer**:
 
 ```python
-return next((True for i in range(30) if cnt == Counter(str(pow(2, i)))), False)
+return next((True for i in range(30) if Counter(str(n)) == Counter(str(pow(2, i)))), False)
 ```
