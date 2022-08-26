@@ -108,7 +108,7 @@ return len(list(takewhile(lambda x: x < len(arr)//2, accumulate(sorted(Counter(a
 - Counter return how many times each number appears in the input array.
 - Sort Counter()'s returned values, take while the sum of values less than half the length of input array, so that we have the minimum numbers of letters that need to be removed.
 
-## 🧩 Reduce Array Size to The Half
+## 🧩 Reordered Power of 2
 
 **Source**: [Reordered Power of 2](https://leetcode.com/problems/reordered-power-of-2/)
 
