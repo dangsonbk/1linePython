@@ -107,3 +107,18 @@ return len(list(takewhile(lambda x: x < len(arr)//2, accumulate(sorted(Counter(a
 
 - Counter return how many times each number appears in the input array.
 - Sort Counter()'s returned values, take while the sum of values less than half the length of input array, so that we have the minimum numbers of letters that need to be removed.
+
+## 🧩 Reduce Array Size to The Half
+
+**Source**: [Reordered Power of 2](https://leetcode.com/problems/reordered-power-of-2/)
+
+**Description**:
+
+> You are given an integer n. We reorder the digits in any order (including the original order) such that the leading digit is not zero.
+> Return true if and only if we can do this so that the resulting number is a power of two.
+
+**Answer**:
+
+```python
+return next((True for i in range(30) if cnt == Counter(str(pow(2, i)))), False)
+```
