@@ -1300,7 +1300,7 @@ return s.find(next((s for s, c in Counter(s).items() if c == 1), "#"))
 > 'c' maps to "-.-.", and so on.
 > For convenience, the full table for the 26 letters of the English alphabet is given below:
 > `[".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]`
->
+> 
 > Given an array of strings words where each word can be written as a concatenation of the Morse code of each letter.
 > 
 > For example, "cab" can be written as `"-.-..--..."`, which is the concatenation of `"-.-."`, `".-"`, and `"-..."`. We will call such a concatenation the transformation of a > word.
@@ -1325,4 +1325,218 @@ return len(set([reduce(lambda p, c: p + [".-","-...","-.-.","-..",".","..-.","--
 
 ```python
 return not Counter(ransomNote) - Counter(magazine)
+```
+
+## 🧩 Longest Common Prefix
+
+**Source**: [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/)
+
+**Description**:
+
+> Write a function to find the longest common prefix string amongst an array of strings.
+> 
+> If there is no common prefix, return an empty string `""`.
+
+**Answer**:
+
+```python
+return "".join(map(lambda n: n.pop(), takewhile(lambda p: len(p) == 1, map(set, zip(*strs)))))
+```
+
+## 🧩 Is Subsequence
+
+**Source**: [Is Subsequence](https://leetcode.com/problems/is-subsequence/submissions/)
+
+**Description**:
+
+> Given two strings `s` and `t`, return `true` *if* `s` *is a **subsequence** of* `t`*, or* `false` *otherwise*.
+> 
+> A **subsequence** of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., `"ace"` is a subsequence of `"abcde"` while `"aec"` is not).
+
+**Answer**:
+
+```python
+return reduce(lambda p, n: p[1:] if p and p[0] == n else p, t, s) == ''
+```
+
+## 🧩 Find Center of Star Graph
+
+**Source**: [Find Center of Star Graph](https://leetcode.com/problems/find-center-of-star-graph/submissions/)
+
+**Description**:
+
+> There is an undirected **star** graph consisting of `n` nodes labeled from `1` to `n`. A star graph is a graph where there is one **center** node and **exactly** `n - 1` edges that connect the center node with every other node.
+> 
+> You are given a 2D integer array `edges` where each `edges[i] = [ui, vi]` indicates that there is an edge between the nodes `ui` and `vi`. Return the center of the given star graph.
+
+**Answer**:
+
+```python
+return set.intersection(*map(set, edges)).pop()
+```
+
+## 🧩 Sorting the Sentence
+
+**Source**: [Sorting the Sentence](https://leetcode.com/problems/sorting-the-sentence/)
+
+**Description**:
+
+> A **sentence** is a list of words that are separated by a single space with no leading or trailing spaces. Each word consists of lowercase and uppercase English letters.
+> 
+> A sentence can be **shuffled** by appending the **1-indexed word position** to each word then rearranging the words in the sentence.
+> 
+> - For example, the sentence `"This is a sentence"` can be shuffled as `"sentence4 a3 is2 This1"` or `"is2 sentence4 This1 a3"`.
+> 
+> Given a **shuffled sentence** `s` containing no more than `9` words, reconstruct and return *the original sentence*.
+
+**Answer**:
+
+```python
+return " ".join(map(lambda w: w[:-1], sorted(s.split(), key=lambda w: w[-1])))
+```
+
+## 🧩 Root Equals Sum of Children
+
+**Source**: [Root Equals Sum of Children](https://leetcode.com/problems/root-equals-sum-of-children/)
+
+**Description**:
+
+> You are given the `root` of a **binary tree** that consists of exactly `3` nodes: the root, its left child, and its right child.
+> 
+> Return `true` *if the value of the root is equal to the **sum** of the values of its two children, or* `false` *otherwise*.
+
+**Answer**:
+
+```python
+return root.val == sum((root.left.val, root.right.val))
+```
+
+## 🧩 Partitioning Into Minimum Number Of Deci-Binary Numbers
+
+**Source**: [Partitioning Into Minimum Number Of Deci-Binary Numbers](https://leetcode.com/problems/partitioning-into-minimum-number-of-deci-binary-numbers/)
+
+**Description**:
+
+> A decimal number is called **deci-binary** if each of its digits is either `0` or `1` without any leading zeros. For example, `101` and `1100` are **deci-binary**, while `112` and `3001` are not.
+> 
+> Given a string `n` that represents a positive decimal integer, return *the **minimum** number of positive **deci-binary** numbers needed so that they sum up to* `n`*.*
+
+**Answer**:
+
+```python
+return int(max(n))
+```
+
+## 🧩 How Many Numbers Are Smaller Than the Current Number
+
+**Source**: [How Many Numbers Are Smaller Than the Current Number](https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/)
+
+**Description**:
+
+> Given the array `nums`, for each `nums[i]` find out how many numbers in the array are smaller than it. That is, for each `nums[i]` you have to count the number of valid `j's` such that `j != i` **and** `nums[j] < nums[i]`.
+> 
+> Return the answer in an array.
+
+**Answer**:
+
+```python
+return [len(list(filter(lambda p: p < n, nums))) for n in nums]
+```
+
+## 🧩 Goal Parser Interpretation
+
+**Source**: [Goal Parser Interpretation](https://leetcode.com/problems/goal-parser-interpretation/)
+
+**Description**:
+
+> You own a **Goal Parser** that can interpret a string `command`. The `command` consists of an alphabet of `"G"`, `"()"` and/or `"(al)"` in some order. The Goal Parser will interpret `"G"` as the string `"G"`, `"()"` as the string `"o"`, and `"(al)"` as the string `"al"`. The interpreted strings are then concatenated in the original order.
+> 
+> Given the string `command`, return *the **Goal Parser**'s interpretation of* `command`.
+
+**Answer**:
+
+```python
+return command.replace("(al)", "al").replace("()", "o")
+```
+
+## 🧩 Check If Two String Arrays are Equivalent
+
+**Source**: [Check If Two String Arrays are Equivalent](https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent/)
+
+**Description**:
+
+> Given two string arrays `word1` and `word2`, return `true` *if the two arrays **represent** the same string, and* `false` *otherwise.*
+> 
+> A string is **represented** by an array if the array elements concatenated **in order** forms the string.
+> 
+> **Example:**
+> 
+> **Input:** word1 = ["a", "cb"], word2 = ["ab", "c"]
+> **Output:** false
+> 
+> **Example:**
+> 
+> **Input:** word1  = ["abc", "d", "defg"], word2 = ["abcddefg"]
+> **Output:** true
+
+**Answer**:
+
+```python
+return "".join(word1) == "".join(word2) 
+```
+
+## 🧩 Truncate Sentence
+
+**Source**: [Truncate Sentence](https://leetcode.com/problems/truncate-sentence/)
+
+**Description**:
+
+> A **sentence** is a list of words that are separated by a single space with no leading or trailing spaces. Each of the words consists of **only** uppercase and lowercase English letters (no punctuation).
+> 
+> - For example, `"Hello World"`, `"HELLO"`, and `"hello world hello world"` are all sentences.
+> 
+> You are given a sentence `s`​​​​​​ and an integer `k`​​​​​​. You want to **truncate** `s`​​​​​​ such that it contains only the **first** `k`​​​​​​ words. Return `s`​​​​*​​ after **truncating** it.*
+> 
+> **Example 1:**
+> 
+> **Input:** s = "Hello how are you Contestant", k = 4
+> **Output:** "Hello how are you"
+> **Explanation:**
+> The words in s are ["Hello", "how" "are", "you", "Contestant"].
+> The first 4 words are ["Hello", "how", "are", "you"].
+> Hence, you should return "Hello how are you".
+
+**Answer**:
+
+```python
+return " ".join(s.split()[:k])
+```
+
+## 🧩 Flipping an Image
+
+**Source**: [Flipping an Image](https://leetcode.com/problems/flipping-an-image/)
+
+**Description**:
+
+> Given an `n x n` binary matrix `image`, flip the image **horizontally**, then invert it, and return *the resulting image*.
+> 
+> To flip an image horizontally means that each row of the image is reversed.
+> 
+> - For example, flipping `[1,1,0]` horizontally results in `[0,1,1]`.
+> 
+> To invert an image means that each `0` is replaced by `1`, and each `1` is replaced by `0`.
+> 
+> - For example, inverting `[0,1,1]` results in `[1,0,0]`.
+> 
+> **Example 1:**
+> 
+> **Input:** image = [[1,1,0],[1,0,1],[0,0,0]]
+> **Output:** [[1,0,0],[0,1,0],[1,1,1]]
+> **Explanation:** First reverse each row: [[0,1,1],[1,0,1],[0,0,0]].
+> Then, invert the image: [[1,0,0],[0,1,0],[1,1,1]]
+
+**Answer**:
+
+```python
+return map(lambda r: list(map(lambda n: n^1, r))[::-1], image)
 ```
