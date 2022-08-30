@@ -26,7 +26,7 @@ class Solution: # default by online judge
 - Just don't.
 - When you hate your future self.
 - When you hate your company, you are willing to leave, you want your product run but be unmaintainable.
-- When the chalenge is easy level, you want to make it more complicate.
+- When the challenge is too simple to you, you want to make life complicate.
 
 ## Notes
 
