@@ -127,3 +127,21 @@ return next((True for i in range(30) if Counter(str(n)) == Counter(str(pow(2, i)
 ```python
 return sorted(str(n)) in [['1'], ['2'], ['4'], ['8'], ['1', '6'], ['2', '3'], ['4', '6'], ['1', '2', '8'], ['2', '5', '6'], ['1', '2', '5'], ['0', '1', '2', '4'], ['0', '2', '4', '8'], ['0', '4', '6', '9'], ['1', '2', '8', '9'], ['1', '3', '4', '6', '8'], ['2', '3', '6', '7', '8'], ['3', '5', '5', '6', '6'], ['0', '1', '1', '2', '3', '7'], ['1', '2', '2', '4', '4', '6'], ['2', '2', '4', '5', '8', '8'], ['0', '1', '4', '5', '6', '7', '8'], ['0', '1', '2', '2', '5', '7', '9'], ['0', '1', '3', '4', '4', '4', '9'], ['0', '3', '6', '8', '8', '8', '8'], ['1', '1', '2', '6', '6', '7', '7', '7'], ['2', '3', '3', '3', '4', '4', '5', '5'], ['0', '1', '4', '6', '6', '7', '8', '8'], ['1', '1', '2', '2', '3', '4', '7', '7', '8'], ['2', '3', '4', '4', '5', '5', '6', '6', '8'], ['0', '1', '2', '3', '5', '6', '7', '8', '9']]
 ```
+
+## 🧩 Rotate Image
+
+**Source**: [Rotate Image](https://leetcode.com/problems/rotate-image/)
+
+**Description**:
+
+> You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).
+> You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation.
+
+**Answer 1**:
+
+```python
+list(map(lambda p: setitem(matrix, p[0], p[1]), enumerate(zip(*matrix[::-1]))))
+```
+
+**Answer 2**:
+[Seven Short Solutions (1 to 7 lines)](https://leetcode.com/problems/rotate-image/discuss/18884/Seven-Short-Solutions-(1-to-7-lines))
