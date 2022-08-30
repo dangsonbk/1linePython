@@ -145,3 +145,7 @@ list(map(lambda p: setitem(matrix, p[0], p[1]), enumerate(zip(*matrix[::-1]))))
 
 **Answer 2**:
 [Seven Short Solutions (1 to 7 lines)](https://leetcode.com/problems/rotate-image/discuss/18884/Seven-Short-Solutions-(1-to-7-lines))
+
+**Explanations**:
+- Please check [Rotating a two-dimensional array in Python](https://stackoverflow.com/questions/8421337/rotating-a-two-dimensional-array-in-python)
+- It required to modify the matrix in-place, 1st answer use `operation.setitem()`, while 2nd solution simply uses `matrix[:]`.
