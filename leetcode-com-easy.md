@@ -1541,7 +1541,7 @@ return " ".join(s.split()[:k])
 return map(lambda r: list(map(lambda n: n^1, r))[::-1], image)
 ```
 
-## 🧩 Flipping an Image
+## 🧩 First Letter to Appear Twice
 
 **Source**: [First Letter to Appear Twice](https://leetcode.com/problems/first-letter-to-appear-twice/)
 
@@ -1558,4 +1558,31 @@ return map(lambda r: list(map(lambda n: n^1, r))[::-1], image)
 
 ```python
 return next((c[1] for c in enumerate(s) if c[1] in s[:c[0]]), "")
+```
+
+## 🧩 Make Array Zero by Subtracting Equal Amounts
+
+**Source**: [Make Array Zero by Subtracting Equal Amounts](https://leetcode.com/problems/make-array-zero-by-subtracting-equal-amounts/)
+
+**Description**:
+
+> You are given a non-negative integer array nums. In one operation, you must:
+
+> Choose a positive integer x such that x is less than or equal to the smallest non-zero element in nums.
+> Subtract x from every positive element in nums.
+> Return the minimum number of operations to make every element in nums equal to 0.
+
+> Example 1:
+
+> Input: nums = [1,5,0,3,5]
+> Output: 3
+> Explanation:
+> In the first operation, choose x = 1. Now, nums = [0,4,0,2,4].
+> In the second operation, choose x = 2. Now, nums = [0,2,0,0,2].
+> In the third operation, choose x = 2. Now, nums = [0,0,0,0,0].
+
+**Answer**:
+
+```python
+return len(set(nums) - {0})
 ```
