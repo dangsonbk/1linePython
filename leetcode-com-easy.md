@@ -1586,3 +1586,124 @@ return next((c[1] for c in enumerate(s) if c[1] in s[:c[0]]), "")
 ```python
 return len(set(nums) - {0})
 ```
+
+## 🧩 Merge Similar Items
+
+**Source**: [Merge Similar Items](https://leetcode.com/problems/merge-similar-items/)
+
+**Description**:
+
+> You are given two 2D integer arrays, `items1` and `items2`, representing two sets of items. Each array `items` has the following properties:
+> 
+> - `items[i] = [valuei, weighti]` where `valuei` represents the **value** and `weighti` represents the **weight** of the `ith` item.
+> - The value of each item in `items` is **unique**.
+> 
+> Return *a 2D integer array* `ret` *where* `ret[i] = [valuei, weighti]`*,* *with* `weighti` *being the **sum of weights** of all items with value* `valuei`.
+> 
+> **Note:** `ret` should be returned in **ascending** order by value.
+> 
+> **Example:**
+> 
+> **Input:** items1 = [[1,1],[4,5],[3,8]], items2 = [[3,1],[1,5]]
+> **Output:** [[1,6],[3,9],[4,5]]
+> **Explanation:** 
+> The item with value = 1 occurs in items1 with weight = 1 and in items2 with weight = 5, total weight = 1 + 5 = 6.
+> The item with value = 3 occurs in items1 with weight = 8 and in items2 with weight = 1, total weight = 8 + 1 = 9.
+> The item with value = 4 occurs in items1 with weight = 5, total weight = 5.  
+> Therefore, we return [[1,6],[3,9],[4,5]].
+
+**Answer**:
+
+```python
+return sorted((Counter(dict(items1)) + Counter(dict(items2))).items())
+```
+
+## 🧩 Number of Arithmetic Triplets
+
+**Source**: [Number of Arithmetic Triplets](https://leetcode.com/problems/number-of-arithmetic-triplets/)
+
+**Description**:
+
+> You are given a **0-indexed**, **strictly increasing** integer array `nums` and a positive integer `diff`. A triplet `(i, j, k)` is an **arithmetic triplet** if the following conditions are met:
+> 
+> - `i < j < k`,
+> - `nums[j] - nums[i] == diff`, and
+> - `nums[k] - nums[j] == diff`.
+> 
+> Return *the number of unique **arithmetic triplets**.*
+
+**Answer**:
+
+```python
+return len([i for i in nums if i + diff in nums and i + 2*diff in nums])
+```
+
+## 🧩 Check Distances Between Same Letters
+
+**Source**: [Check Distances Between Same Letters](https://leetcode.com/problems/check-distances-between-same-letters/)
+
+**Description**:
+
+> You are given a **0-indexed** string `s` consisting of only lowercase English letters, where each letter in `s` appears **exactly** **twice**. You are also given a **0-indexed** integer array `distance` of length `26`.
+> 
+> Each letter in the alphabet is numbered from `0` to `25` (i.e. `'a' -> 0`, `'b' -> 1`, `'c' -> 2`, ... , `'z' -> 25`).
+> 
+> In a **well-spaced** string, the number of letters between the two occurrences of the `ith` letter is `distance[i]`. If the `ith` letter does not appear in `s`, then `distance[i]` can be **ignored**.
+> 
+> Return `true` *if* `s` *is a **well-spaced** string, otherwise return* `false`.
+> 
+> **Example 1:**
+> 
+> **Input:** s = "abaccb", distance = [1,3,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+> **Output:** true
+> **Explanation:**
+> 
+> - 'a' appears at indices 0 and 2 so it satisfies distance[0] = 1.
+> - 'b' appears at indices 1 and 5 so it satisfies distance[1] = 3.
+> - 'c' appears at indices 3 and 4 so it satisfies distance[2] = 0.
+>   Note that distance[3] = 5, but since 'd' does not appear in s, it can be ignored.
+>   Return true because s is a well-spaced string.
+
+**Answer**:
+
+```python
+return all((len(s) - s[::-1].index(c) - s.index(c) - 2 == distance[ord(c)-ord("a")]) for c in set(s))
+```
+
+**Explanation:**
+
+- Index of second appearance of character, as `index()` only returns the first appearance, calculate the index of second appearance by reverse the string: `len(s) - s[::-1].index(c) - 1`
+- Index of first appearance of character: `s.index(c)`
+- Distance between appearances: `second - first - 1` = `len(s) - s[::-1].index(c) - 1 - s.index(c) - 1` = `len(s) - s[::-1].index(c) - s.index(c) - 2`
+- Compare with provided distance `distance[ord(c)-ord("a")]`
+- Do it with all characters c in s. `for c in set(s)`
+
+## 🧩 Find Subarrays With Equal Sum
+
+**Source**: [Find Subarrays With Equal Sum](https://leetcode.com/problems/find-subarrays-with-equal-sum/)
+
+**Description**:
+
+> Given a **0-indexed** integer array `nums`, determine whether there exist **two** subarrays of length `2` with **equal** sum. Note that the two subarrays must begin at **different** indices.
+> 
+> Return `true` *if these subarrays exist, and* `false` *otherwise.*
+> 
+> A **subarray** is a contiguous non-empty sequence of elements within an array.
+> 
+> **Example 1:**
+> 
+> **Input:** nums = [4,2,4]
+> **Output:** true
+> **Explanation:** The subarrays with elements [4,2] and [2,4] have the same sum of 6.
+
+**Answer**:
+
+```python
+return Counter(map(sum, pairwise(nums))).most_common(1)[0][1] >= 2
+```
+
+**Explanation:**
+
+- `itertools.pairwise(nums)` returns all subarrays with length 2. `pairwise('ABCDEFG') --> AB BC CD DE EF FG`
+- Use `map(sum, pairwise(nums))` to sum all the subarrays.
+- Use `Counter.most_common()` to find if there are subarrays with same `sum()`.
