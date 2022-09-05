@@ -1540,3 +1540,22 @@ return " ".join(s.split()[:k])
 ```python
 return map(lambda r: list(map(lambda n: n^1, r))[::-1], image)
 ```
+
+## 🧩 Flipping an Image
+
+**Source**: [First Letter to Appear Twice](https://leetcode.com/problems/first-letter-to-appear-twice/)
+
+**Description**:
+
+> Given a string s consisting of lowercase English letters, return the first letter to appear twice.
+> 
+> Note:
+> 
+> A letter a appears twice before another letter b if the second occurrence of a is before the second occurrence of b.
+> `s` will contain at least one letter that appears twice.
+
+**Answer**:
+
+```python
+return next((c[1] for c in enumerate(s) if c[1] in s[:c[0]]), "")
+```
