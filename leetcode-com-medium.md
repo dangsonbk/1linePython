@@ -172,3 +172,18 @@ return reduce(lambda p, n: p + n[1],(chain.from_iterable(filter(len, [sorted(lis
 - Groupby the zipped inputs.
 - Slice the sorted groupby output by [1:]
 - Sum the time by using reduce
+
+## 🧩 Sum of Two Integers
+
+**Source**: [Sum of Two Integers](https://leetcode.com/problems/sum-of-two-integers)
+
+**Description**:
+
+> Given two integers a and b, return the sum of the two integers without using the operators + and -.
+
+**Answer**: LMAO
+
+```python
+class Solution:
+    getSum = add
+```
