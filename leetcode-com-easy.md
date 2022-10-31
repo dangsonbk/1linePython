@@ -1731,7 +1731,7 @@ return Counter(map(sum, pairwise(nums))).most_common(1)[0][1] >= 2
 return (Counter(t) - Counter(s)).most_common()[0][0]
 ```
 
-## 🧩  Add Digits
+## 🧩 Add Digits
 
 **Source**: [ Add Digits](https://leetcode.com/problems/add-digits/)
 
@@ -1751,4 +1751,19 @@ return (Counter(t) - Counter(s)).most_common()[0][0]
 
 ```python
 return (num - 1) % 9 + 1 if num else 0
+```
+
+## 🧩 Toeplitz Matrix
+
+**Source**: [Toeplitz Matrix](https://leetcode.com/problems/toeplitz-matrix/)
+
+**Description**:
+
+> Given an m x n matrix, return true if the matrix is Toeplitz. Otherwise, return false.
+> A matrix is Toeplitz if every diagonal from top-left to bottom-right has the same elements.
+
+**Answer**:
+
+```python
+return all(r1[:-1] == r2[1:] for r1, r2 in zip(matrix, matrix[1:]))
 ```
