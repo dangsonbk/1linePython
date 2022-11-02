@@ -1767,3 +1767,17 @@ return (num - 1) % 9 + 1 if num else 0
 ```python
 return all(r1[:-1] == r2[1:] for r1, r2 in zip(matrix, matrix[1:]))
 ```
+
+## 🧩 Add Binary
+
+**Source**: [Add Binary](https://leetcode.com/problems/add-binary)
+
+**Description**:
+
+> Given two binary strings a and b, return their sum as a binary string.
+
+**Answer**:
+
+```python
+return bin(int(a, 2) + int(b, 2))[2:]
+```
