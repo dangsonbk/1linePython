@@ -216,5 +216,19 @@ return reduce(lambda s, _: ''.join(str(len(list(group))) + d for d, group in gro
 **Answer**:
 
 ```python
-return list(permutations(nums))
+return permutations(nums)
+```
+
+## 🧩 Permutations II
+
+**Source**: [Permutations II](https://leetcode.com/problems/permutations-ii)
+
+**Description**:
+
+> Given a collection of numbers, nums, that might contain duplicates, return all possible unique permutations in any order.
+
+**Answer**:
+
+```python
+return set(permutations(nums))
 ```
