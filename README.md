@@ -36,7 +36,7 @@ class Solution: # default by online judge
 
 ## Resources
 
-- Found this interesting works of [finxter](https://github.com/finxter): [pythononeliners](https://pythononeliners.com/) [10 Elegant Python One-Liners That Fit in a Tweet](https://blog.finxter.com/10-python-one-liners/)
+- Found this interesting works of [finxter](https://github.com/finxter): [pythononeliners](https://pythononeliners.com/) | [10 Elegant Python One-Liners That Fit in a Tweet](https://blog.finxter.com/10-python-one-liners/)
 
 ## Contribution
 
