@@ -204,3 +204,17 @@ class Solution:
 ```python
 return reduce(lambda s, _: ''.join(str(len(list(group))) + d for d, group in groupby(s)), range(n - 1), '1')
 ```
+
+## 🧩 Permutations
+
+**Source**: [Permutations](https://leetcode.com/problems/permutations)
+
+**Description**:
+
+> Given an array nums of distinct integers, return all the possible permutations. You can return the answer in any order.
+
+**Answer**:
+
+```python
+return list(permutations(nums))
+```
