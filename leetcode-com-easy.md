@@ -1781,3 +1781,25 @@ return all(r1[:-1] == r2[1:] for r1, r2 in zip(matrix, matrix[1:]))
 ```python
 return bin(int(a, 2) + int(b, 2))[2:]
 ```
+
+## 🧩 Make The String Great
+
+**Source**: [Make The String Great](https://leetcode.com/problems/make-the-string-great)
+
+**Description**:
+
+> Given a string s of lower and upper case English letters.
+> A good string is a string which doesn't have two adjacent characters s[i] and s[i + 1] where:
+> `0 <= i <= s.length - 2`
+> `s[i]` is a lower-case letter and `s[i + 1]` is the same letter but in upper-case or vice-versa.
+> To make the string good, you can choose two adjacent characters that make the string bad and remove them. You can keep doing this until the string becomes good.
+> Return the string after making it good. The answer is guaranteed to be unique under the given constraints.
+> Notice that an empty string is also good.
+
+**Answer**: Cre: [congbk92](https://github.com/congbk92)
+
+```python
+return reduce(lambda acc, x: acc[:-1] if len(acc) != 0 and acc[-1] != x and acc[-1].upper() == x.upper() else acc + x, s)
+# A little modification
+return reduce(lambda p, n: p[:-1] if p and p[-1] != n and p[-1].upper() == n.upper() else p + n, s)
+```
