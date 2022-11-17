@@ -232,3 +232,19 @@ return permutations(nums)
 ```python
 return set(permutations(nums))
 ```
+
+## 🧩 Rectangle Area
+
+**Source**: [Rectangle Area](https://leetcode.com/problems/rectangle-area)
+
+**Description**:
+
+> Given the coordinates of two rectilinear rectangles in a 2D plane, return the total area covered by the two rectangles.
+> The first rectangle is defined by its bottom-left corner (ax1, ay1) and its top-right corner (ax2, ay2).
+> The second rectangle is defined by its bottom-left corner (bx1, by1) and its top-right corner (bx2, by2).
+
+**Answer**: Credit to: [python3 one-liner O(1) with explanations](https://leetcode.com/problems/rectangle-area/solutions/2822228/python3-one-liner-o-1-with-explanations/), please upvote author
+
+```python
+return (ax2-ax1)*(ay2-ay1) + (bx2-bx1)*(by2-by1) - max(min(ax2,bx2)-max(ax1,bx1), 0) * max(min(ay2,by2)-max(ay1,by1), 0)
+```
