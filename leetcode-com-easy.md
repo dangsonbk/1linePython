@@ -1819,3 +1819,79 @@ return reduce(lambda p, n: p[:-1] if p and p[-1] != n and p[-1].upper() == n.upp
 ```python
 return reduce(lambda p, n: p[:-1] if p and p[-1] == n else p + n, s)
 ```
+
+## 🧩 Find the Array Concatenation Value
+
+**Source**: [Find the Array Concatenation Value](https://leetcode.com/problems/find-the-array-concatenation-value)
+
+**Description**:
+
+> You are given a 0-indexed integer array nums.
+> The concatenation of two numbers is the number formed by concatenating their numerals.
+> For example, the concatenation of 15, 49 is 1549.
+> The concatenation value of nums is initially equal to 0. Perform this operation until nums becomes empty:
+>
+> If there exists more than one number in nums, pick the first element and last element in nums respectively and add the value of their concatenation to the concatenation value of nums, then delete the first and last element from nums.
+> If one element exists, add its value to the concatenation value of nums, then delete it.
+> Return the concatenation value of the nums.
+
+**Answer**:
+
+```python
+return sum(map(lambda n: int("".join(map(str, n))) if n[0] else n[1], zip_longest(nums[:len(nums)//2], nums[len(nums)//2:][::-1])))
+```
+
+## 🧩 Add to Array-Form of Integer
+
+**Source**: [Add to Array-Form of Integer](https://leetcode.com/problems/add-to-array-form-of-integer)
+
+**Description**:
+
+> The array-form of an integer num is an array representing its digits in left to right order.
+> For example, for num = 1321, the array form is [1,3,2,1].
+> Given num, the array-form of an integer, and an integer k, return the array-form of the integer num + k.
+
+**Answer**:
+
+```python
+return [int(o) for o in str(int("".join([str(i) for i in num])) + k)]
+```
+
+## 🧩 Count the Digits That Divide a Number
+
+**Source**: [Count the Digits That Divide a Number](https://leetcode.com/problems/count-the-digits-that-divide-a-number)
+
+**Description**:
+
+> Given an integer num, return the number of digits in num that divide num.
+> An integer val divides nums if nums % val == 0.
+
+**Answer**:
+
+```python
+return [num%int(n) for n in str(num)].count(0)
+```
+
+## 🧩 Delete Columns to Make Sorted
+
+**Source**: [Delete Columns to Make Sorted](https://leetcode.com/problems/count-the-digits-that-divide-a-number)
+
+**Description**:
+
+> You are given an array of n strings strs, all of the same length.
+> 
+> The strings can be arranged such that there is one on each line, making a grid.
+> 
+> For example, strs = ["abc", "bce", "cae"] can be arranged as follows:
+> abc
+> bce
+> cae
+> You want to delete the columns that are not sorted lexicographically. In the above example (0-indexed), columns 0 ('a', 'b', 'c') and 2 ('c', 'e', 'e') are sorted, while column 1 ('b', 'c', 'a') is not, so you would delete column 1.
+
+> Return the number of columns that you will delete.
+
+**Answer**:
+
+```python
+return sum(list(filter(lambda s: list(c) != sorted(c), zip(*strs))
+```
