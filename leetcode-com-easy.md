@@ -1895,3 +1895,17 @@ return [num%int(n) for n in str(num)].count(0)
 ```python
 return sum(list(filter(lambda s: list(c) != sorted(c), zip(*strs))
 ```
+
+## 🧩 Find the Index of the First Occurrence in a String
+
+**Source**: [Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string)
+
+**Description**:
+
+> Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
+
+**Answer**:
+
+```python
+return haystack.find(needle)
+```
