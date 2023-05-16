@@ -248,3 +248,25 @@ return set(permutations(nums))
 ```python
 return (ax2-ax1)*(ay2-ay1) + (bx2-bx1)*(by2-by1) - max(min(ax2,bx2)-max(ax1,bx1), 0) * max(min(ay2,by2)-max(ay1,by1), 0)
 ```
+
+## 🧩 Determine if Two Strings Are Close
+
+**Source**: [Determine if Two Strings Are Close](https://leetcode.com/problems/determine-if-two-strings-are-close)
+
+**Description**:
+
+> Two strings are considered close if you can attain one from the other using the following operations:
+> 
+> Operation 1: Swap any two existing characters.
+> For example, abcde -> aecdb
+> Operation 2: Transform every occurrence of one existing character into another existing character, and do the same with the other character.
+> For example, aacabb -> bbcbaa (all a's turn into b's, and all b's turn into a's)
+> You can use the operations on either string as many times as necessary.
+
+> Given two strings, word1 and word2, return true if word1 and word2 are close, and false otherwise.
+
+**Answer**:
+
+```python
+return set(word1) == set(word2) and sorted(Counter(word1).values()) == sorted(Counter(word2).values())
+```
