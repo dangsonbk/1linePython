@@ -270,3 +270,19 @@ return (ax2-ax1)*(ay2-ay1) + (bx2-bx1)*(by2-by1) - max(min(ax2,bx2)-max(ax1,bx1)
 ```python
 return set(word1) == set(word2) and sorted(Counter(word1).values()) == sorted(Counter(word2).values())
 ```
+
+## 🧩 Sort Characters By Frequency
+
+**Source**: [Sort Characters By Frequency](https://leetcode.com/problems/sort-characters-by-frequency)
+
+**Description**:
+
+> Given a string s, sort it in decreasing order based on the frequency of the characters. The frequency of a character is the number of times it appears in the string.
+> Return the sorted string. If there are multiple answers, return any of them.
+
+**Answer**:
+
+```python
+return "".join(c*f for c, f in Counter(s).most_common())
+```
+
